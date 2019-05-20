@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConciergeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SPA_Detalle_Reserva">
+    <Key>
+      <PropertyRef Name="CodReserva" />
+    </Key>
+    <Property Name="CodReserva" Type="int" Nullable="false" />
+    <Property Name="Numreg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FecHoraRes" Type="datetime" />
+    <Property Name="CodSer" Type="char" MaxLength="6" />
+    <Property Name="CodSala" Type="char" MaxLength="5" />
+    <Property Name="CodTerap" Type="int" />
+    <Property Name="Notas" Type="varchar" MaxLength="255" />
+    <Property Name="NomHues" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SPA_Encabezado_Reserva">
+    <Key>
+      <PropertyRef Name="CodReserva" />
+    </Key>
+    <Property Name="CodReserva" Type="int" Nullable="false" />
+    <Property Name="ReservaOpera" Type="varchar" MaxLength="50" />
+    <Property Name="NomHuesped" Type="varchar" MaxLength="100" />
+    <Property Name="NumRoom" Type="int" />
+    <Property Name="Checkin" Type="datetime" />
+    <Property Name="Checkout" Type="datetime" />
+    <Property Name="FecReg" Type="datetime" />
+    <Property Name="UsrReg" Type="varchar" MaxLength="50" />
+    <Property Name="Alergias" Type="varchar" MaxLength="255" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="255" />
+    <Property Name="NotasCliente" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SPA_Salas">
+    <Key>
+      <PropertyRef Name="CodSala" />
+    </Key>
+    <Property Name="CodSala" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DesSala" Type="varchar" MaxLength="50" />
+    <Property Name="CarSala" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SPA_Servicios">
+    <Key>
+      <PropertyRef Name="CodSer" />
+    </Key>
+    <Property Name="CodSer" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="NomSer" Type="varchar" MaxLength="30" />
+    <Property Name="DesSer" Type="varchar" MaxLength="100" />
+    <Property Name="DurSer" Type="time" Precision="7" />
+    <Property Name="PreSer" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="SPA_Terapeutas">
+    <Key>
+      <PropertyRef Name="CodTerap" />
+    </Key>
+    <Property Name="CodTerap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomTerap" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="TOUR_Catalogo_Tour">
+    <Key>
+      <PropertyRef Name="CodTour" />
+    </Key>
+    <Property Name="CodTour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomTour" Type="varchar" MaxLength="30" />
+    <Property Name="DesTour" Type="varchar" MaxLength="100" />
+    <Property Name="DurTour" Type="time" Precision="7" />
+    <Property Name="PreTourAdulto" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PreTourAdultoM" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="PreTourNino" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="NotasTour" Type="varchar" MaxLength="255" />
+    <Property Name="ComTour" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Concierge.dbo.TOUR_Encabezado_Reserva' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TOUR_Encabezado_Reserva">
+    <Key>
+      <PropertyRef Name="CodReserva" />
+    </Key>
+    <Property Name="CodReserva" Type="int" Nullable="false" />
+    <Property Name="ReservaOpera" Type="varchar" MaxLength="50" />
+    <Property Name="NomHuesped" Type="varchar" MaxLength="100" />
+    <Property Name="NumRoom" Type="int" />
+    <Property Name="Checkin" Type="datetime" />
+    <Property Name="Checkout" Type="datetime" />
+    <Property Name="FecReg" Type="datetime" />
+    <Property Name="UsrReg" Type="varchar" MaxLength="50" />
+    <Property Name="Alergias" Type="varchar" MaxLength="255" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="255" />
+    <Property Name="NotasCliente" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="CodCom" Type="int" />
+    <Property Name="CodTour" Type="int" />
+    <Property Name="PaxAdul" Type="int" />
+    <Property Name="PaxAdulM" Type="int" />
+    <Property Name="PaxNino" Type="int" />
+    <Property Name="Total" Type="numeric" Precision="14" Scale="2" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Hora" Type="time" Precision="7" />
+    <Property Name="ReturnTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="TOUR_Operadores">
+    <Key>
+      <PropertyRef Name="CodCom" />
+    </Key>
+    <Property Name="CodCom" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomCom" Type="varchar" MaxLength="100" />
+    <Property Name="TelCom" Type="varchar" MaxLength="10" />
+    <Property Name="EmaCom" Type="varchar" MaxLength="80" />
+    <Property Name="Contacto1" Type="varchar" MaxLength="100" />
+    <Property Name="Telcon1" Type="varchar" MaxLength="10" />
+    <Property Name="EmaCon1" Type="varchar" MaxLength="80" />
+    <Property Name="Contacto2" Type="varchar" MaxLength="100" />
+    <Property Name="Telcon2" Type="varchar" MaxLength="10" />
+    <Property Name="Emacon2" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Concierge.dbo.TRAN_Encabezado_Reserva' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TRAN_Encabezado_Reserva">
+    <Key>
+      <PropertyRef Name="CodReserva" />
+    </Key>
+    <Property Name="CodReserva" Type="int" Nullable="false" />
+    <Property Name="ReservaOpera" Type="varchar" MaxLength="50" />
+    <Property Name="NomHuesped" Type="varchar" MaxLength="100" />
+    <Property Name="NumRoom" Type="int" />
+    <Property Name="Checkin" Type="datetime" />
+    <Property Name="Checkout" Type="datetime" />
+    <Property Name="FecReg" Type="datetime" />
+    <Property Name="UsrReg" Type="varchar" MaxLength="50" />
+    <Property Name="Alergias" Type="varchar" MaxLength="255" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="255" />
+    <Property Name="NotasCliente" Type="varchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="TipoTran" Type="int" />
+    <Property Name="Pickup" Type="int" />
+    <Property Name="Dropoff" Type="int" />
+    <Property Name="Pax" Type="int" />
+    <Property Name="Precio" Type="numeric" Precision="14" Scale="2" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Hora" Type="time" Precision="7" />
+    <Property Name="Aerolinea" Type="varchar" MaxLength="80" />
+    <Property Name="NoVuelo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TRAN_Pick_Drop">
+    <Key>
+      <PropertyRef Name="CodPick" />
+    </Key>
+    <Property Name="CodPick" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesPick" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TRAN_Tipo_Transporte">
+    <Key>
+      <PropertyRef Name="Codtip" />
+    </Key>
+    <Property Name="Codtip" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
+    <End Role="SPA_Encabezado_Reserva" Type="Self.SPA_Encabezado_Reserva" Multiplicity="1" />
+    <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SPA_Encabezado_Reserva">
+        <PropertyRef Name="CodReserva" />
+      </Principal>
+      <Dependent Role="SPA_Detalle_Reserva">
+        <PropertyRef Name="CodReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPA_Detalle_Reserva_SPA_Salas">
+    <End Role="SPA_Salas" Type="Self.SPA_Salas" Multiplicity="0..1" />
+    <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPA_Salas">
+        <PropertyRef Name="CodSala" />
+      </Principal>
+      <Dependent Role="SPA_Detalle_Reserva">
+        <PropertyRef Name="CodSala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPA_Detalle_Reserva_SPA_Servicios">
+    <End Role="SPA_Servicios" Type="Self.SPA_Servicios" Multiplicity="0..1" />
+    <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPA_Servicios">
+        <PropertyRef Name="CodSer" />
+      </Principal>
+      <Dependent Role="SPA_Detalle_Reserva">
+        <PropertyRef Name="CodSer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SPA_Detalle_Reserva_SPA_Terapeutas">
+    <End Role="SPA_Terapeutas" Type="Self.SPA_Terapeutas" Multiplicity="0..1" />
+    <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPA_Terapeutas">
+        <PropertyRef Name="CodTerap" />
+      </Principal>
+      <Dependent Role="SPA_Detalle_Reserva">
+        <PropertyRef Name="CodTerap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TOUR_Catalogo_Tour_TOUR_Operadores">
+    <End Role="TOUR_Operadores" Type="Self.TOUR_Operadores" Multiplicity="0..1" />
+    <End Role="TOUR_Catalogo_Tour" Type="Self.TOUR_Catalogo_Tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR_Operadores">
+        <PropertyRef Name="CodCom" />
+      </Principal>
+      <Dependent Role="TOUR_Catalogo_Tour">
+        <PropertyRef Name="ComTour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour">
+    <End Role="TOUR_Catalogo_Tour" Type="Self.TOUR_Catalogo_Tour" Multiplicity="0..1" />
+    <End Role="TOUR_Encabezado_Reserva" Type="Self.TOUR_Encabezado_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR_Catalogo_Tour">
+        <PropertyRef Name="CodTour" />
+      </Principal>
+      <Dependent Role="TOUR_Encabezado_Reserva">
+        <PropertyRef Name="CodTour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TOUR_Encabezado_Reserva_TOUR_Operadores">
+    <End Role="TOUR_Operadores" Type="Self.TOUR_Operadores" Multiplicity="0..1" />
+    <End Role="TOUR_Encabezado_Reserva" Type="Self.TOUR_Encabezado_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOUR_Operadores">
+        <PropertyRef Name="CodCom" />
+      </Principal>
+      <Dependent Role="TOUR_Encabezado_Reserva">
+        <PropertyRef Name="CodCom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop">
+    <End Role="TRAN_Pick_Drop" Type="Self.TRAN_Pick_Drop" Multiplicity="0..1" />
+    <End Role="TRAN_Encabezado_Reserva" Type="Self.TRAN_Encabezado_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAN_Pick_Drop">
+        <PropertyRef Name="CodPick" />
+      </Principal>
+      <Dependent Role="TRAN_Encabezado_Reserva">
+        <PropertyRef Name="Pickup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop1">
+    <End Role="TRAN_Pick_Drop" Type="Self.TRAN_Pick_Drop" Multiplicity="0..1" />
+    <End Role="TRAN_Encabezado_Reserva" Type="Self.TRAN_Encabezado_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAN_Pick_Drop">
+        <PropertyRef Name="CodPick" />
+      </Principal>
+      <Dependent Role="TRAN_Encabezado_Reserva">
+        <PropertyRef Name="Dropoff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRAN_Encabezado_Reserva_TRAN_Tipo_Transporte">
+    <End Role="TRAN_Tipo_Transporte" Type="Self.TRAN_Tipo_Transporte" Multiplicity="0..1" />
+    <End Role="TRAN_Encabezado_Reserva" Type="Self.TRAN_Encabezado_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRAN_Tipo_Transporte">
+        <PropertyRef Name="Codtip" />
+      </Principal>
+      <Dependent Role="TRAN_Encabezado_Reserva">
+        <PropertyRef Name="TipoTran" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ConciergeModelStoreContainer">
+    <EntitySet Name="SPA_Detalle_Reserva" EntityType="Self.SPA_Detalle_Reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPA_Encabezado_Reserva" EntityType="Self.SPA_Encabezado_Reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPA_Salas" EntityType="Self.SPA_Salas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPA_Servicios" EntityType="Self.SPA_Servicios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPA_Terapeutas" EntityType="Self.SPA_Terapeutas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOUR_Catalogo_Tour" EntityType="Self.TOUR_Catalogo_Tour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOUR_Operadores" EntityType="Self.TOUR_Operadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRAN_Pick_Drop" EntityType="Self.TRAN_Pick_Drop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRAN_Tipo_Transporte" EntityType="Self.TRAN_Tipo_Transporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOUR_Encabezado_Reserva" EntityType="Self.TOUR_Encabezado_Reserva" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TOUR_Encabezado_Reserva].[CodReserva] AS [CodReserva], 
+    [TOUR_Encabezado_Reserva].[ReservaOpera] AS [ReservaOpera], 
+    [TOUR_Encabezado_Reserva].[NomHuesped] AS [NomHuesped], 
+    [TOUR_Encabezado_Reserva].[NumRoom] AS [NumRoom], 
+    [TOUR_Encabezado_Reserva].[Checkin] AS [Checkin], 
+    [TOUR_Encabezado_Reserva].[Checkout] AS [Checkout], 
+    [TOUR_Encabezado_Reserva].[FecReg] AS [FecReg], 
+    [TOUR_Encabezado_Reserva].[UsrReg] AS [UsrReg], 
+    [TOUR_Encabezado_Reserva].[Alergias] AS [Alergias], 
+    [TOUR_Encabezado_Reserva].[Observaciones] AS [Observaciones], 
+    [TOUR_Encabezado_Reserva].[NotasCliente] AS [NotasCliente], 
+    [TOUR_Encabezado_Reserva].[Email] AS [Email], 
+    [TOUR_Encabezado_Reserva].[CodCom] AS [CodCom], 
+    [TOUR_Encabezado_Reserva].[CodTour] AS [CodTour], 
+    [TOUR_Encabezado_Reserva].[PaxAdul] AS [PaxAdul], 
+    [TOUR_Encabezado_Reserva].[PaxAdulM] AS [PaxAdulM], 
+    [TOUR_Encabezado_Reserva].[PaxNino] AS [PaxNino], 
+    [TOUR_Encabezado_Reserva].[Total] AS [Total], 
+    [TOUR_Encabezado_Reserva].[Fecha] AS [Fecha], 
+    [TOUR_Encabezado_Reserva].[Hora] AS [Hora], 
+    [TOUR_Encabezado_Reserva].[ReturnTime] AS [ReturnTime]
+    FROM [dbo].[TOUR_Encabezado_Reserva] AS [TOUR_Encabezado_Reserva]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TRAN_Encabezado_Reserva" EntityType="Self.TRAN_Encabezado_Reserva" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TRAN_Encabezado_Reserva].[CodReserva] AS [CodReserva], 
+    [TRAN_Encabezado_Reserva].[ReservaOpera] AS [ReservaOpera], 
+    [TRAN_Encabezado_Reserva].[NomHuesped] AS [NomHuesped], 
+    [TRAN_Encabezado_Reserva].[NumRoom] AS [NumRoom], 
+    [TRAN_Encabezado_Reserva].[Checkin] AS [Checkin], 
+    [TRAN_Encabezado_Reserva].[Checkout] AS [Checkout], 
+    [TRAN_Encabezado_Reserva].[FecReg] AS [FecReg], 
+    [TRAN_Encabezado_Reserva].[UsrReg] AS [UsrReg], 
+    [TRAN_Encabezado_Reserva].[Alergias] AS [Alergias], 
+    [TRAN_Encabezado_Reserva].[Observaciones] AS [Observaciones], 
+    [TRAN_Encabezado_Reserva].[NotasCliente] AS [NotasCliente], 
+    [TRAN_Encabezado_Reserva].[Email] AS [Email], 
+    [TRAN_Encabezado_Reserva].[TipoTran] AS [TipoTran], 
+    [TRAN_Encabezado_Reserva].[Pickup] AS [Pickup], 
+    [TRAN_Encabezado_Reserva].[Dropoff] AS [Dropoff], 
+    [TRAN_Encabezado_Reserva].[Pax] AS [Pax], 
+    [TRAN_Encabezado_Reserva].[Precio] AS [Precio], 
+    [TRAN_Encabezado_Reserva].[Fecha] AS [Fecha], 
+    [TRAN_Encabezado_Reserva].[Hora] AS [Hora], 
+    [TRAN_Encabezado_Reserva].[Aerolinea] AS [Aerolinea], 
+    [TRAN_Encabezado_Reserva].[NoVuelo] AS [NoVuelo]
+    FROM [dbo].[TRAN_Encabezado_Reserva] AS [TRAN_Encabezado_Reserva]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva" Association="Self.FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
+      <End Role="SPA_Encabezado_Reserva" EntitySet="SPA_Encabezado_Reserva" />
+      <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Salas" Association="Self.FK_SPA_Detalle_Reserva_SPA_Salas">
+      <End Role="SPA_Salas" EntitySet="SPA_Salas" />
+      <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Servicios" Association="Self.FK_SPA_Detalle_Reserva_SPA_Servicios">
+      <End Role="SPA_Servicios" EntitySet="SPA_Servicios" />
+      <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Terapeutas" Association="Self.FK_SPA_Detalle_Reserva_SPA_Terapeutas">
+      <End Role="SPA_Terapeutas" EntitySet="SPA_Terapeutas" />
+      <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TOUR_Catalogo_Tour_TOUR_Operadores" Association="Self.FK_TOUR_Catalogo_Tour_TOUR_Operadores">
+      <End Role="TOUR_Operadores" EntitySet="TOUR_Operadores" />
+      <End Role="TOUR_Catalogo_Tour" EntitySet="TOUR_Catalogo_Tour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour" Association="Self.FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour">
+      <End Role="TOUR_Catalogo_Tour" EntitySet="TOUR_Catalogo_Tour" />
+      <End Role="TOUR_Encabezado_Reserva" EntitySet="TOUR_Encabezado_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TOUR_Encabezado_Reserva_TOUR_Operadores" Association="Self.FK_TOUR_Encabezado_Reserva_TOUR_Operadores">
+      <End Role="TOUR_Operadores" EntitySet="TOUR_Operadores" />
+      <End Role="TOUR_Encabezado_Reserva" EntitySet="TOUR_Encabezado_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop" Association="Self.FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop">
+      <End Role="TRAN_Pick_Drop" EntitySet="TRAN_Pick_Drop" />
+      <End Role="TRAN_Encabezado_Reserva" EntitySet="TRAN_Encabezado_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop1" Association="Self.FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop1">
+      <End Role="TRAN_Pick_Drop" EntitySet="TRAN_Pick_Drop" />
+      <End Role="TRAN_Encabezado_Reserva" EntitySet="TRAN_Encabezado_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRAN_Encabezado_Reserva_TRAN_Tipo_Transporte" Association="Self.FK_TRAN_Encabezado_Reserva_TRAN_Tipo_Transporte">
+      <End Role="TRAN_Tipo_Transporte" EntitySet="TRAN_Tipo_Transporte" />
+      <End Role="TRAN_Encabezado_Reserva" EntitySet="TRAN_Encabezado_Reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

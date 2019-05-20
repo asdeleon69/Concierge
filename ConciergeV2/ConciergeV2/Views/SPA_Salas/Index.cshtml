@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ConciergeV2.Models.SPA_Salas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Salas spa</h2>
+
+<p>
+    @Html.ActionLink("Agregar nuevo registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DesSala)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarSala)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesSala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarSala)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.CodSala.Trim() }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.CodSala.Trim() }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodSala.Trim() })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConciergeModelStoreContainer" CdmEntityContainer="ConciergeEntities">
+    <EntitySetMapping Name="SPA_Detalle_Reserva">
+      <EntityTypeMapping TypeName="ConciergeModel.SPA_Detalle_Reserva">
+        <MappingFragment StoreEntitySet="SPA_Detalle_Reserva">
+          <ScalarProperty Name="CodReserva" ColumnName="CodReserva" />
+          <ScalarProperty Name="Numreg" ColumnName="Numreg" />
+          <ScalarProperty Name="FecHoraRes" ColumnName="FecHoraRes" />
+          <ScalarProperty Name="CodSer" ColumnName="CodSer" />
+          <ScalarProperty Name="CodSala" ColumnName="CodSala" />
+          <ScalarProperty Name="CodTerap" ColumnName="CodTerap" />
+          <ScalarProperty Name="Notas" ColumnName="Notas" />
+          <ScalarProperty Name="NomHues" ColumnName="NomHues" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPA_Encabezado_Reserva">
+      <EntityTypeMapping TypeName="ConciergeModel.SPA_Encabezado_Reserva">
+        <MappingFragment StoreEntitySet="SPA_Encabezado_Reserva">
+          <ScalarProperty Name="CodReserva" ColumnName="CodReserva" />
+          <ScalarProperty Name="ReservaOpera" ColumnName="ReservaOpera" />
+          <ScalarProperty Name="NomHuesped" ColumnName="NomHuesped" />
+          <ScalarProperty Name="NumRoom" ColumnName="NumRoom" />
+          <ScalarProperty Name="Checkin" ColumnName="Checkin" />
+          <ScalarProperty Name="Checkout" ColumnName="Checkout" />
+          <ScalarProperty Name="FecReg" ColumnName="FecReg" />
+          <ScalarProperty Name="UsrReg" ColumnName="UsrReg" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="NotasCliente" ColumnName="NotasCliente" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPA_Salas">
+      <EntityTypeMapping TypeName="ConciergeModel.SPA_Salas">
+        <MappingFragment StoreEntitySet="SPA_Salas">
+          <ScalarProperty Name="CodSala" ColumnName="CodSala" />
+          <ScalarProperty Name="DesSala" ColumnName="DesSala" />
+          <ScalarProperty Name="CarSala" ColumnName="CarSala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPA_Servicios">
+      <EntityTypeMapping TypeName="ConciergeModel.SPA_Servicios">
+        <MappingFragment StoreEntitySet="SPA_Servicios">
+          <ScalarProperty Name="CodSer" ColumnName="CodSer" />
+          <ScalarProperty Name="NomSer" ColumnName="NomSer" />
+          <ScalarProperty Name="DesSer" ColumnName="DesSer" />
+          <ScalarProperty Name="DurSer" ColumnName="DurSer" />
+          <ScalarProperty Name="PreSer" ColumnName="PreSer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPA_Terapeutas">
+      <EntityTypeMapping TypeName="ConciergeModel.SPA_Terapeutas">
+        <MappingFragment StoreEntitySet="SPA_Terapeutas">
+          <ScalarProperty Name="CodTerap" ColumnName="CodTerap" />
+          <ScalarProperty Name="NomTerap" ColumnName="NomTerap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRAN_Pick_Drop">
+      <EntityTypeMapping TypeName="ConciergeModel.TRAN_Pick_Drop">
+        <MappingFragment StoreEntitySet="TRAN_Pick_Drop">
+          <ScalarProperty Name="CodPick" ColumnName="CodPick" />
+          <ScalarProperty Name="DesPick" ColumnName="DesPick" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRAN_Tipo_Transporte">
+      <EntityTypeMapping TypeName="ConciergeModel.TRAN_Tipo_Transporte">
+        <MappingFragment StoreEntitySet="TRAN_Tipo_Transporte">
+          <ScalarProperty Name="Codtip" ColumnName="Codtip" />
+          <ScalarProperty Name="Destip" ColumnName="Destip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRAN_Encabezado_Reserva">
+      <EntityTypeMapping TypeName="ConciergeModel.TRAN_Encabezado_Reserva">
+        <MappingFragment StoreEntitySet="TRAN_Encabezado_Reserva">
+          <ScalarProperty Name="CodReserva" ColumnName="CodReserva" />
+          <ScalarProperty Name="ReservaOpera" ColumnName="ReservaOpera" />
+          <ScalarProperty Name="NomHuesped" ColumnName="NomHuesped" />
+          <ScalarProperty Name="NumRoom" ColumnName="NumRoom" />
+          <ScalarProperty Name="Checkin" ColumnName="Checkin" />
+          <ScalarProperty Name="Checkout" ColumnName="Checkout" />
+          <ScalarProperty Name="FecReg" ColumnName="FecReg" />
+          <ScalarProperty Name="UsrReg" ColumnName="UsrReg" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="NotasCliente" ColumnName="NotasCliente" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TipoTran" ColumnName="TipoTran" />
+          <ScalarProperty Name="Pickup" ColumnName="Pickup" />
+          <ScalarProperty Name="Dropoff" ColumnName="Dropoff" />
+          <ScalarProperty Name="Pax" ColumnName="Pax" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Aerolinea" ColumnName="Aerolinea" />
+          <ScalarProperty Name="NoVuelo" ColumnName="NoVuelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOUR_Catalogo_Tour">
+      <EntityTypeMapping TypeName="ConciergeModel.TOUR_Catalogo_Tour">
+        <MappingFragment StoreEntitySet="TOUR_Catalogo_Tour">
+          <ScalarProperty Name="ComTour" ColumnName="ComTour" />
+          <ScalarProperty Name="NotasTour" ColumnName="NotasTour" />
+          <ScalarProperty Name="PreTourNino" ColumnName="PreTourNino" />
+          <ScalarProperty Name="PreTourAdultoM" ColumnName="PreTourAdultoM" />
+          <ScalarProperty Name="PreTourAdulto" ColumnName="PreTourAdulto" />
+          <ScalarProperty Name="DurTour" ColumnName="DurTour" />
+          <ScalarProperty Name="DesTour" ColumnName="DesTour" />
+          <ScalarProperty Name="NomTour" ColumnName="NomTour" />
+          <ScalarProperty Name="CodTour" ColumnName="CodTour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOUR_Operadores">
+      <EntityTypeMapping TypeName="ConciergeModel.TOUR_Operadores">
+        <MappingFragment StoreEntitySet="TOUR_Operadores">
+          <ScalarProperty Name="Emacon2" ColumnName="Emacon2" />
+          <ScalarProperty Name="Telcon2" ColumnName="Telcon2" />
+          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+          <ScalarProperty Name="EmaCon1" ColumnName="EmaCon1" />
+          <ScalarProperty Name="Telcon1" ColumnName="Telcon1" />
+          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
+          <ScalarProperty Name="EmaCom" ColumnName="EmaCom" />
+          <ScalarProperty Name="TelCom" ColumnName="TelCom" />
+          <ScalarProperty Name="NomCom" ColumnName="NomCom" />
+          <ScalarProperty Name="CodCom" ColumnName="CodCom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOUR_Encabezado_Reserva">
+      <EntityTypeMapping TypeName="ConciergeModel.TOUR_Encabezado_Reserva">
+        <MappingFragment StoreEntitySet="TOUR_Encabezado_Reserva">
+          <ScalarProperty Name="ReturnTime" ColumnName="ReturnTime" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PaxNino" ColumnName="PaxNino" />
+          <ScalarProperty Name="PaxAdulM" ColumnName="PaxAdulM" />
+          <ScalarProperty Name="PaxAdul" ColumnName="PaxAdul" />
+          <ScalarProperty Name="CodTour" ColumnName="CodTour" />
+          <ScalarProperty Name="CodCom" ColumnName="CodCom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NotasCliente" ColumnName="NotasCliente" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="UsrReg" ColumnName="UsrReg" />
+          <ScalarProperty Name="FecReg" ColumnName="FecReg" />
+          <ScalarProperty Name="Checkout" ColumnName="Checkout" />
+          <ScalarProperty Name="Checkin" ColumnName="Checkin" />
+          <ScalarProperty Name="NumRoom" ColumnName="NumRoom" />
+          <ScalarProperty Name="NomHuesped" ColumnName="NomHuesped" />
+          <ScalarProperty Name="ReservaOpera" ColumnName="ReservaOpera" />
+          <ScalarProperty Name="CodReserva" ColumnName="CodReserva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

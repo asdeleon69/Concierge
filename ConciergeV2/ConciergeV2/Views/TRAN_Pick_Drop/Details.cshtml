@@ -1,0 +1,26 @@
+﻿@model ConciergeV2.Models.TRAN_Pick_Drop
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Pick Drop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DesPick)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesPick)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CodPick }) |
+    @Html.ActionLink("Regresar atrás", "Index")
+</p>

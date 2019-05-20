@@ -1,0 +1,50 @@
+﻿@model ConciergeV2.Models.SPA_Servicios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Servicio spa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DurSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DurSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreSer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CodSer.Trim() }) |
+    @Html.ActionLink("Regresar atrás", "Index")
+</p>

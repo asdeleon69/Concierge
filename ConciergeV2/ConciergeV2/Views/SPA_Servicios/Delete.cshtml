@@ -1,0 +1,56 @@
+﻿@model ConciergeV2.Models.SPA_Servicios
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro de eliminar esto?</h3>
+<div>
+    <h4>Servicio spa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DurSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DurSer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreSer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </div>
+    }
+</div>

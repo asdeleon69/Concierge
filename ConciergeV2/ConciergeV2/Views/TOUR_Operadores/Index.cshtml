@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ConciergeV2.Models.TOUR_Operadores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Operador tour</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomCom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelCom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmaCom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contacto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telcon1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmaCon1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contacto2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telcon2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emacon2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomCom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelCom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmaCom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contacto1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telcon1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmaCon1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contacto2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telcon2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emacon2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOUR_Catalogo_Tour.NomTour)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.CodCom }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.CodCom }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodCom })
+        </td>
+    </tr>
+}
+
+</table>

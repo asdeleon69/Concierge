@@ -1,0 +1,120 @@
+﻿@model ConciergeV2.Models.SPA_Encabezado_Reserva
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro de eliminar esto?</h3>
+<div>
+    <h4>Encabezado reserva spa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservaOpera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservaOpera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomHuesped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomHuesped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Checkin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Checkin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Checkout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Checkout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FecReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FecReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotasCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotasCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPA_Detalle_Reserva.CodSer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPA_Detalle_Reserva.CodSer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </div>
+    }
+</div>
