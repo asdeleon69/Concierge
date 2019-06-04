@@ -31,7 +31,7 @@ namespace ConciergeV2.Models
         [Display(Name = "Fecha registro")]
         [Required]
         public Nullable<System.DateTime> FecReg { get; set; }
-        [Display(Name = "Usuario registro")] 
+        [Display(Name = "Usuario registro")]
         [Required]
         public string UsrReg { get; set; }
         [Display(Name = "Alergias")]
@@ -48,13 +48,13 @@ namespace ConciergeV2.Models
         [Display(Name = "Tour")]
         [Required]
         public Nullable<int> CodTour { get; set; }
-        [Display(Name = "Precio adulto")]
+        [Display(Name = "Pax adulto")]
         [Required]
         public Nullable<int> PaxAdul { get; set; }
-        [Display(Name = "Precio adulto mayor")]
+        [Display(Name = "Pax adulto mayor")]
         [Required]
         public Nullable<int> PaxAdulM { get; set; }
-        [Display(Name = "Precio niño")]
+        [Display(Name = "Pax niño")]
         [Required]
         public Nullable<int> PaxNino { get; set; }
         [Display(Name = "Total")]
@@ -69,7 +69,7 @@ namespace ConciergeV2.Models
         [Display(Name = "Regreso aproximado")]
         [Required]
         public Nullable<System.TimeSpan> ReturnTime { get; set; }
-    
+
         public virtual TOUR_Catalogo_Tour TOUR_Catalogo_Tour { get; set; }
         public virtual TOUR_Operadores TOUR_Operadores { get; set; }
     }

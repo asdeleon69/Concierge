@@ -12,7 +12,7 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class TRAN_Encabezado_Reserva
     {
         [Display(Name = "Código")]
@@ -66,12 +66,10 @@ namespace ConciergeV2.Models
         [Required]
         public Nullable<System.TimeSpan> Hora { get; set; }
         [Display(Name = "Aerolinea")]
-        [Required]
         public string Aerolinea { get; set; }
         [Display(Name = "Número vuelo")]
-        [Required]
         public string NoVuelo { get; set; }
-    
+
         public virtual TRAN_Pick_Drop TRAN_Pick_Drop { get; set; }
         public virtual TRAN_Pick_Drop TRAN_Pick_Drop1 { get; set; }
         public virtual TRAN_Tipo_Transporte TRAN_Tipo_Transporte { get; set; }

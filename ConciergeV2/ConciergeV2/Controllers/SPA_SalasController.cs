@@ -12,7 +12,7 @@ namespace ConciergeV2.Controllers
 {
     public class SPA_SalasController : Controller
     {
-        private ConciergeEntities db = new ConciergeEntities();
+        private ConciergeEntities1 db = new ConciergeEntities1();
 
         // GET: SPA_Salas
         public ActionResult Index()

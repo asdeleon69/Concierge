@@ -12,7 +12,7 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class TOUR_Catalogo_Tour
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,31 +21,31 @@ namespace ConciergeV2.Models
             this.TOUR_Encabezado_Reserva = new HashSet<TOUR_Encabezado_Reserva>();
         }
 
-        [Display(Name ="Código tour")]
+        [Display(Name = "Código tour")]
         public int CodTour { get; set; }
-        [Display(Name ="Nombre tour")]
+        [Display(Name = "Nombre tour")]
         [Required]
         public string NomTour { get; set; }
-        [Display(Name ="Descripción tour")]
+        [Display(Name = "Descripción tour")]
         [Required]
         public string DesTour { get; set; }
-        [Display(Name ="Duración tour")]
+        [Display(Name = "Duración tour")]
         [Required]
         public Nullable<System.TimeSpan> DurTour { get; set; }
-        [Display(Name ="Precio adulto")]
+        [Display(Name = "Precio adulto")]
         [Required]
         public Nullable<decimal> PreTourAdulto { get; set; }
-        [Display(Name ="Precio adulto mayor")]
+        [Display(Name = "Precio adulto mayor")]
         [Required]
         public Nullable<decimal> PreTourAdultoM { get; set; }
-        [Display(Name ="Precio niño")]
+        [Display(Name = "Precio niño")]
         [Required]
         public Nullable<decimal> PreTourNino { get; set; }
-        [Display(Name ="Notas")]
+        [Display(Name = "Notas")]
         public string NotasTour { get; set; }
-        [Display(Name ="Operador")]
+        [Display(Name = "Operador")]
         public Nullable<int> ComTour { get; set; }
-    
+
         public virtual TOUR_Operadores TOUR_Operadores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TOUR_Encabezado_Reserva> TOUR_Encabezado_Reserva { get; set; }

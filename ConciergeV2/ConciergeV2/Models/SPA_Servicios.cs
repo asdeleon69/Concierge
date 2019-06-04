@@ -12,7 +12,7 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class SPA_Servicios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,23 +21,23 @@ namespace ConciergeV2.Models
             this.SPA_Detalle_Reserva = new HashSet<SPA_Detalle_Reserva>();
         }
 
-        [Display(Name ="Código")]
+        [Display(Name = "Código")]
         [Required]
         [StringLength(6, MinimumLength = 1)]
         public string CodSer { get; set; }
-        [Display(Name ="Servicio")]
+        [Display(Name = "Servicio")]
         [Required]
         public string NomSer { get; set; }
-        [Display(Name ="Descripción")]
+        [Display(Name = "Descripción")]
         [Required]
         public string DesSer { get; set; }
-        [Display(Name ="Duración")]
+        [Display(Name = "Duración")]
         [Required]
         public Nullable<System.TimeSpan> DurSer { get; set; }
-        [Display(Name ="Precio")]
+        [Display(Name = "Precio")]
         [Required]
         public Nullable<decimal> PreSer { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SPA_Detalle_Reserva> SPA_Detalle_Reserva { get; set; }
     }

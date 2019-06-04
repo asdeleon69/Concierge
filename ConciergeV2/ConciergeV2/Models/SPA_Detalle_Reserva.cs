@@ -12,10 +12,10 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class SPA_Detalle_Reserva
     {
-        [Display(Name="Código")]
+        [Display(Name = "Código")]
         public int CodReserva { get; set; }
         [Display(Name = "Número registro")]
         [Required]
@@ -33,12 +33,11 @@ namespace ConciergeV2.Models
         [Required]
         public Nullable<int> CodTerap { get; set; }
         [Display(Name = "Notas")]
-        [Required]
         public string Notas { get; set; }
         [Display(Name = "Nombre Huesped")]
         [Required]
         public string NomHues { get; set; }
-    
+
         public virtual SPA_Encabezado_Reserva SPA_Encabezado_Reserva { get; set; }
         public virtual SPA_Salas SPA_Salas { get; set; }
         public virtual SPA_Servicios SPA_Servicios { get; set; }

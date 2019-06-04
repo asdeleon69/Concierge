@@ -12,7 +12,7 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class TOUR_Operadores
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,29 +33,22 @@ namespace ConciergeV2.Models
         [Phone]
         public string TelCom { get; set; }
         [Display(Name = "Email")]
-        [Required]
         [EmailAddress]
         public string EmaCom { get; set; }
         [Display(Name = "Contacto 1")]
-        [Required]
         public string Contacto1 { get; set; }
         [Display(Name = "Télefono 1")]
-        [Required]
         [Phone]
         public string Telcon1 { get; set; }
         [Display(Name = "Email")]
-        [Required]
         [EmailAddress]
         public string EmaCon1 { get; set; }
         [Display(Name = "Contacto 2")]
-        [Required]
         public string Contacto2 { get; set; }
         [Display(Name = "Télefono 2")]
-        [Required]
         [Phone]
         public string Telcon2 { get; set; }
         [Display(Name = "Email")]
-        [Required]
         [EmailAddress]
         public string Emacon2 { get; set; }
 

@@ -12,7 +12,7 @@ namespace ConciergeV2.Controllers
 {
     public class TOUR_Catalogo_TourController : Controller
     {
-        private ConciergeEntities db = new ConciergeEntities();
+        private ConciergeEntities1 db = new ConciergeEntities1();
 
         // GET: TOUR_Catalogo_Tour
         public ActionResult Index()

@@ -4,28 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="66e34da47eb74bd7991fc0dc47c84b1d" Name="Diagram1">
+      <Diagram DiagramId="54b014b3b1644c6d8349ac748986f77c" Name="Diagram1">
         <EntityTypeShape EntityType="ConciergeModel.SPA_Detalle_Reserva" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.SPA_Encabezado_Reserva" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.SPA_Salas" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.SPA_Servicios" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.SPA_Terapeutas" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConciergeModel.TOUR_Catalogo_Tour" Width="1.5" PointX="5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConciergeModel.TOUR_Operadores" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.TRAN_Pick_Drop" Width="1.5" PointX="5.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.TRAN_Tipo_Transporte" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConciergeModel.TOUR_Encabezado_Reserva" Width="1.5" PointX="7.25" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ConciergeModel.TRAN_Encabezado_Reserva" Width="1.5" PointX="8" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="ConciergeModel.FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_SPA_Detalle_Reserva_SPA_Salas" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_SPA_Detalle_Reserva_SPA_Servicios" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_SPA_Detalle_Reserva_SPA_Terapeutas" ManuallyRouted="false" />
+        <AssociationConnector Association="ConciergeModel.FK_TOUR_Catalogo_Tour_TOUR_Operadores" ManuallyRouted="false" />
+        <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour" ManuallyRouted="false" />
+        <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Operadores" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_TRAN_Encabezado_Reserva_TRAN_Pick_Drop1" ManuallyRouted="false" />
         <AssociationConnector Association="ConciergeModel.FK_TRAN_Encabezado_Reserva_TRAN_Tipo_Transporte" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ConciergeModel.TOUR_Catalogo_Tour" Width="1.5" PointX="5.625" PointY="10.25" />
-        <EntityTypeShape EntityType="ConciergeModel.TOUR_Operadores" Width="1.5" PointX="3.375" PointY="10.125" />
-        <EntityTypeShape EntityType="ConciergeModel.TOUR_Encabezado_Reserva" Width="1.5" PointX="7.875" PointY="9.125" />
-        <AssociationConnector Association="ConciergeModel.FK_TOUR_Catalogo_Tour_TOUR_Operadores" />
-        <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour" />
-        <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Operadores" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

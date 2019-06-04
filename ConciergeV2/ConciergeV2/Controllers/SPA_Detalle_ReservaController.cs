@@ -12,7 +12,7 @@ namespace ConciergeV2.Controllers
 {
     public class SPA_Detalle_ReservaController : Controller
     {
-        private ConciergeEntities db = new ConciergeEntities();
+        private ConciergeEntities1 db = new ConciergeEntities1();
 
         // GET: SPA_Detalle_Reserva
         public ActionResult Index()
@@ -140,19 +140,5 @@ namespace ConciergeV2.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Schedule()
-        {
-            return View();
-        }
-
-        public JsonResult GetEvents()
-        {
-            using (ConciergeEntities dc = new ConciergeEntities())
-            {
-                var events = dc.SPA_Detalle_Reserva.ToList();
-                return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            }
-        }
-
     }
 }

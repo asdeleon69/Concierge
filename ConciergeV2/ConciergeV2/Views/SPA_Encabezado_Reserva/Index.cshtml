@@ -44,9 +44,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPA_Detalle_Reserva.CodSer)
-        </th>
         <th></th>
     </tr>
 
@@ -84,9 +81,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SPA_Detalle_Reserva.CodSer)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.CodReserva }) |

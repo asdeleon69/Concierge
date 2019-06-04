@@ -12,7 +12,7 @@ namespace ConciergeV2.Controllers
 {
     public class TRAN_Pick_DropController : Controller
     {
-        private ConciergeEntities db = new ConciergeEntities();
+        private ConciergeEntities1 db = new ConciergeEntities1();
 
         // GET: TRAN_Pick_Drop
         public ActionResult Index()

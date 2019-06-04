@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DurTour, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DurTour, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DurTour, new { htmlAttributes = new { @class = "form-control", @type="time" } })
                 @Html.ValidationMessageFor(model => model.DurTour, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PreTourAdulto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PreTourAdulto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PreTourAdulto, new { htmlAttributes = new { @class = "form-control", @type="number", @min="1.00", @step="any" } })
                 @Html.ValidationMessageFor(model => model.PreTourAdulto, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PreTourAdultoM, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PreTourAdultoM, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PreTourAdultoM, new { htmlAttributes = new { @class = "form-control", @type="number", @min="1.00", @step="any" } })
                 @Html.ValidationMessageFor(model => model.PreTourAdultoM, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -59,7 +59,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PreTourNino, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PreTourNino, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PreTourNino, new { htmlAttributes = new { @class = "form-control", @type="number", @min="1.00", @step="any" } })
                 @Html.ValidationMessageFor(model => model.PreTourNino, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -1,4 +1,10 @@
 ﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
 
 @{
     ViewBag.Title = "Schedule";
@@ -16,12 +22,6 @@
                 <h4 class="modal-title"><span id="eventTitle"></span></h4>
             </div>
             <div class="modal-body">
-                <button id="btnDelete" class="btn btn-default btn-sm pull-right">
-                    <span class="glyphicon glyphicon-remove"></span> Remove
-                </button>
-                <button id="btnEdit" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
-                    <span class="glyphicon glyphicon-pencil"></span> Edit
-                </button>
                 <p id="pDetails"></p>
             </div>
             <div class="modal-footer">
@@ -32,13 +32,13 @@
 </div>
 
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
 @section Scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
     <script>
@@ -46,13 +46,13 @@
             var events = [];
             $.ajax({
                 type: "GET",
-                url: "/SPA_Detalle_Reserva/GetEvents",
+                url: "/Schedule/GetEvents",
                 success: function (data) {
                     $.each(data, function (i, v) {
                         events.push({
                             eventID: v.CodReserva,
-                            title: v.CodSer,
-                            description: v.NomHues,
+                            title: v.NomHues,
+                            description: v.des,
                             start: moment(v.FecHoraRes)
                         });
                     })
@@ -61,8 +61,7 @@
                 error: function (error) {
                     alert('failed');
                 }
-            });
-        });
+            })
 
             function GenerateCalender(events) {
                 $('#calender').fullCalendar('destroy');
@@ -91,9 +90,8 @@
 
                         $('#myModal').modal();
                     }
-                });
+                })
             }
+        })
     </script>
 }
-
-

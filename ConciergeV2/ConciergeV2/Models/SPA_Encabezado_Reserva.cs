@@ -12,10 +12,16 @@ namespace ConciergeV2.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class SPA_Encabezado_Reserva
     {
-        [Display(Name ="Codigo reserva")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SPA_Encabezado_Reserva()
+        {
+            this.SPA_Detalle_Reserva = new HashSet<SPA_Detalle_Reserva>();
+        }
+
+        [Display(Name = "Codigo reserva")]
         public int CodReserva { get; set; }
         [Display(Name = "Reserva Opera")]
         public string ReservaOpera { get; set; }
@@ -41,7 +47,8 @@ namespace ConciergeV2.Models
         public string NotasCliente { get; set; }
         [EmailAddress]
         public string Email { get; set; }
-    
-        public virtual SPA_Detalle_Reserva SPA_Detalle_Reserva { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SPA_Detalle_Reserva> SPA_Detalle_Reserva { get; set; }
     }
 }

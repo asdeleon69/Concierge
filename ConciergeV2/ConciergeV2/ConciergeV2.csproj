@@ -132,6 +132,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SPA_Detalle_ReservaController.cs" />
     <Compile Include="Controllers\SPA_Encabezado_ReservaController.cs" />
     <Compile Include="Controllers\SPA_SalasController.cs" />
@@ -146,53 +147,53 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Concierge.Context.cs">
+    <Compile Include="Models\ConciergeModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Concierge.Context.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Concierge.cs">
+    <Compile Include="Models\ConciergeModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Concierge.Designer.cs">
+    <Compile Include="Models\ConciergeModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Concierge.edmx</DependentUpon>
+      <DependentUpon>ConciergeModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\SPA_Detalle_Reserva.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPA_Encabezado_Reserva.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPA_Salas.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPA_Servicios.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPA_Terapeutas.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TOUR_Catalogo_Tour.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TOUR_Encabezado_Reserva.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TOUR_Operadores.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TRAN_Encabezado_Reserva.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TRAN_Pick_Drop.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TRAN_Tipo_Transporte.cs">
-      <DependentUpon>Concierge.tt</DependentUpon>
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,28 +206,32 @@
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo.svg" />
+    <Content Include="Content\simple-sidebar.css" />
+    <Content Include="Content\style2.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Concierge.Context.tt">
+    <Content Include="Models\ConciergeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Concierge.edmx</DependentUpon>
-      <LastGenOutput>Concierge.Context.cs</LastGenOutput>
+      <DependentUpon>ConciergeModel.edmx</DependentUpon>
+      <LastGenOutput>ConciergeModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Concierge.tt">
+    <Content Include="Models\ConciergeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Concierge.edmx</DependentUpon>
-      <LastGenOutput>Concierge.cs</LastGenOutput>
+      <DependentUpon>ConciergeModel.edmx</DependentUpon>
+      <LastGenOutput>ConciergeModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Concierge.edmx">
+    <EntityDeploy Include="Models\ConciergeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Concierge.Designer.cs</LastGenOutput>
+      <LastGenOutput>ConciergeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Concierge.edmx.diagram">
-      <DependentUpon>Concierge.edmx</DependentUpon>
+    <Content Include="Models\ConciergeModel.edmx.diagram">
+      <DependentUpon>ConciergeModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\fullcalendar.helper.js" />
@@ -483,7 +488,7 @@
     <Content Include="Views\TRAN_Tipo_Transporte\Details.cshtml" />
     <Content Include="Views\TRAN_Tipo_Transporte\Edit.cshtml" />
     <Content Include="Views\TRAN_Tipo_Transporte\Index.cshtml" />
-    <Content Include="Views\SPA_Detalle_Reserva\Schedule.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

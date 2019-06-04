@@ -12,7 +12,7 @@ namespace ConciergeV2.Controllers
 {
     public class TRAN_Encabezado_ReservaController : Controller
     {
-        private ConciergeEntities db = new ConciergeEntities();
+        private ConciergeEntities1 db = new ConciergeEntities1();
 
         // GET: TRAN_Encabezado_Reserva
         public ActionResult Index()

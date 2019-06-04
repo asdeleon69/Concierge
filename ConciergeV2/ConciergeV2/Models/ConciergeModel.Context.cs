@@ -13,10 +13,10 @@ namespace ConciergeV2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ConciergeEntities : DbContext
+    public partial class ConciergeEntities1 : DbContext
     {
-        public ConciergeEntities()
-            : base("name=ConciergeEntities")
+        public ConciergeEntities1()
+            : base("name=ConciergeEntities1")
         {
         }
     
