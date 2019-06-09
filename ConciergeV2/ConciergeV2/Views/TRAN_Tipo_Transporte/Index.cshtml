@@ -4,30 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Tipo transporte</h2>
+    <section class="content-header">
+        <h2>Tipo transporte</h2>
+    </section>
 
-<p>
-    @Html.ActionLink("Crear nuevo registro", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Destip)
-        </th>
-        <th></th>
-    </tr>
+<section class="content container-fluid">
+    <p>
+        <i class="fas fa-file"></i>
+        @Html.ActionLink("Crear nuevo registro", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Destip)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Destip)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Codtip }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.Codtip }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.Codtip })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destip)
+                </td>
+                <td>
+                    <i class="fas fa-edit"></i>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Codtip }) |
+                    <i class="fas fa-trash-alt"></i>
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Codtip })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</section>

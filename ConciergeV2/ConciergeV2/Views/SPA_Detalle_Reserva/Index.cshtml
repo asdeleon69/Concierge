@@ -3,74 +3,81 @@
 @{
     ViewBag.Title = "Index";
 }
+    <section class="content-header">
+        <h2>Detalle reserva</h2>
 
-<h2>Detalle reserva</h2>
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Agregar nuevo registro", "Create")|
+            <i class="fas fa-exchange-alt"></i>
+            @Html.ActionLink("Regresar a Reserva spa", "Index", "SPA_Encabezado_Reserva")
+        </p>
+    </section>
+<section class="content container-fluid">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numreg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FecHoraRes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomHues)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
+                </th>
+                <th></th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Agregar nuevo registro", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Numreg)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FecHoraRes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomHues)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numreg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FecHoraRes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Notas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomHues)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPA_Encabezado_Reserva.ReservaOpera)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPA_Salas.DesSala)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPA_Servicios.NomSer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SPA_Terapeutas.NomTerap)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
+                    </td>
+                </tr>
+            }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numreg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FecHoraRes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomHues)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPA_Encabezado_Reserva.ReservaOpera)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPA_Salas.DesSala)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPA_Servicios.NomSer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPA_Terapeutas.NomTerap)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
-                @Html.ActionLink("Detalle", "Details", new { id = item.CodReserva }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
-            </td>
-        </tr>
-    }
-
-</table>
+        </table>
+</section>

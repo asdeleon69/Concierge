@@ -4,181 +4,186 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar</h2>
+    <section class="content-header">
+        <h2>Eliminar</h2>
+    </section>
 
-<h3>¿Está seguro de eliminar esto?</h3>
-<div>
-    <h4>Encabezado reserva tour</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ReservaOpera)
-        </dt>
+    <section class="content container-fluid">
+        <h3>¿Está seguro de eliminar esto?</h3>
+        <div>
+            <h4>Encabezado reserva tour</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReservaOpera)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReservaOpera)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ReservaOpera)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NomHuesped)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomHuesped)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomHuesped)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomHuesped)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumRoom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumRoom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumRoom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NumRoom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Checkin)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Checkin)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Checkin)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Checkin)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Checkout)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Checkout)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Checkout)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Checkout)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FecReg)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FecReg)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FecReg)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FecReg)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UsrReg)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UsrReg)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UsrReg)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.UsrReg)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Alergias)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Alergias)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Alergias)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Alergias)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Observaciones)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NotasCliente)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NotasCliente)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NotasCliente)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NotasCliente)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaxAdul)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxAdul)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaxAdul)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PaxAdul)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaxAdulM)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxAdulM)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaxAdulM)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PaxAdulM)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaxNino)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxNino)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaxNino)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PaxNino)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Total)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Total)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Total)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Total)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fecha)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Hora)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Hora)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReturnTime)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReturnTime)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReturnTime)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ReturnTime)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TOUR_Catalogo_Tour.NomTour)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TOUR_Operadores.NomCom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Operadores.NomCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TOUR_Operadores.NomCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Operadores.NomCom)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar atrás", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Regresar atrás", "Index")
+                </div>
+            }
         </div>
-    }
-</div>
+    </section>

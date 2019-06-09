@@ -4,87 +4,91 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalle</h2>
+    <section class="content-header">
+        <h2>Detalle</h2>
+    </section>
 
-<div>
-    <h4>Operador tour</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomCom)
-        </dt>
+    <section class="content container-fluid">
+        <div>
+            <h4>Operador tour</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TelCom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TelCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TelCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TelCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmaCom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmaCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EmaCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EmaCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contacto1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contacto1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contacto1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Contacto1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telcon1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telcon1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telcon1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Telcon1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmaCon1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmaCon1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EmaCon1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EmaCon1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contacto2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contacto2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contacto2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Contacto2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telcon2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telcon2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telcon2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Telcon2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Emacon2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Emacon2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Emacon2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Emacon2)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.CodCom }) |
-    @Html.ActionLink("Regresar atrás", "Index")
-</p>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.CodCom }) |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </p>
+    </section>

@@ -4,48 +4,55 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Servicio spa</h2>
+    <section class="content-header">
+        <h2>Servicio spa</h2>
+    </section>
 
-<p>
-    @Html.ActionLink("Agregar nuevo registro", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomSer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DesSer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DurSer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PreSer)
-        </th>
-        <th></th>
-    </tr>
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Agregar nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomSer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DesSer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DurSer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PreSer)
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomSer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DesSer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DurSer)
-        </td>
-        <td>
-            $ @Html.DisplayFor(modelItem => item.PreSer)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CodSer.Trim() }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.CodSer.Trim() }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodSer.Trim() })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomSer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DesSer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DurSer)
+                    </td>
+                    <td>
+                        $ @Html.DisplayFor(modelItem => item.PreSer)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodSer.Trim() }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodSer.Trim() })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+    </section>

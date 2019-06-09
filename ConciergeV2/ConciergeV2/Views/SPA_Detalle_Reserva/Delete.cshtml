@@ -4,85 +4,90 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar</h2>
+<section class="content-header">
+    <h2>Eliminar</h2>
+</section>
 
-<h3>¿Está seguro de eliminar esto?</h3>
-<div>
-    <h4>Detalle reserva spa</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Numreg)
-        </dt>
+<section class="content container-fluid">
+    <h3>¿Está seguro de eliminar esto?</h3>
+    <div>
+        <h4>Detalle reserva spa</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Numreg)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numreg)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Numreg)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FecHoraRes)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.FecHoraRes)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FecHoraRes)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.FecHoraRes)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notas)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Notas)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Notas)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Notas)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NomHues)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.NomHues)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomHues)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.NomHues)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Salas.DesSala)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SPA_Salas.DesSala)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Servicios.NomSer)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SPA_Servicios.NomSer)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Terapeutas.NomTerap)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SPA_Terapeutas.NomTerap)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar atrás", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                @Html.ActionLink("Regresar atrás", "Index")
+            </div>
+        }
+    </div>
+</section>"

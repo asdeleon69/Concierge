@@ -4,9 +4,13 @@
     ViewBag.Title = "Index";
 }
 
+<section class="content-header">
 <h2>Pick/Drop</h2>
+</section>
 
+<section class="content container-fluid">
 <p>
+    <i class="fas fa-file"></i>
     @Html.ActionLink("Crear nuevo registro", "Create")
 </p>
 <table class="table">
@@ -23,11 +27,13 @@
             @Html.DisplayFor(modelItem => item.DesPick)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CodPick }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.CodPick }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodPick })
+            <i class="fas fa-edit"></i>
+            @Html.ActionLink("Editar", "Edit", new { id = item.CodPick }) |
+            <i class="fas fa-trash-alt"></i>
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.CodPick })
         </td>
     </tr>
 }
 
 </table>
+</section>

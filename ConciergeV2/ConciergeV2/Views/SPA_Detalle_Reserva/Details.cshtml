@@ -4,79 +4,83 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalle</h2>
+    <section class="content-header">
+        <h2>Detalle</h2>
+    </section>
 
-<div>
-    <h4>Detalle reserva spa</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Numreg)
-        </dt>
+    <section class="content container-fluid">
+        <div>
+            <h4>Detalle reserva spa</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Numreg)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numreg)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Numreg)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FecHoraRes)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FecHoraRes)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FecHoraRes)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FecHoraRes)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notas)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Notas)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Notas)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Notas)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NomHues)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomHues)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomHues)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomHues)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SPA_Encabezado_Reserva.ReservaOpera)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SPA_Salas.DesSala)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Salas.DesSala)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SPA_Salas.DesSala)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SPA_Servicios.NomSer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Servicios.NomSer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SPA_Servicios.NomSer)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SPA_Terapeutas.NomTerap)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SPA_Terapeutas.NomTerap)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.SPA_Terapeutas.NomTerap)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.CodReserva }) |
-    @Html.ActionLink("Regresar atrás", "Index")
-</p>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.CodReserva }) |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </p>
+    </section>

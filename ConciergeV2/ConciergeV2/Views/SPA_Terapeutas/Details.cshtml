@@ -4,23 +4,27 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalle</h2>
+    <section class="content-header">
+        <h2>Detalle</h2>
+    </section>
 
-<div>
-    <h4>Terapeuta spa</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomTerap)
-        </dt>
+    <section class="content container-fluid">
+        <div>
+            <h4>Terapeuta spa</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomTerap)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomTerap)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomTerap)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.CodTerap }) |
-    @Html.ActionLink("Regresar atrás", "Index")
-</p>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.CodTerap }) |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </p>
+    </section>

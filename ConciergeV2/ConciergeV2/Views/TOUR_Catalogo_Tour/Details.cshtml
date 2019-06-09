@@ -3,9 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content-header">
+    <h2>Detalle</h2>
+</section>
 
-<h2>Detalle</h2>
-
+<section class="content container-fluid">
 <div>
     <h4>Catalogo tour</h4>
     <hr />
@@ -80,3 +82,4 @@
     @Html.ActionLink("Editar", "Edit", new { id = Model.CodTour }) |
     @Html.ActionLink("Regresar atrás", "Index")
 </p>
+</section>

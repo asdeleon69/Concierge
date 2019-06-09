@@ -4,101 +4,106 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar</h2>
+    <section class="content-header">
+        <h2>Eliminar</h2>
+    </section>
 
-<h3>¿Está seguro de eliminar esto?</h3>
-<div>
-    <h4>Operador tour</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomCom)
-        </dt>
+    <section class="content container-fluid">
+        <h3>¿Está seguro de eliminar esto?</h3>
+        <div>
+            <h4>Operador tour</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TelCom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TelCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TelCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TelCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmaCom)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmaCom)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EmaCom)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EmaCom)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contacto1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contacto1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contacto1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Contacto1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telcon1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telcon1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telcon1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Telcon1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmaCon1)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmaCon1)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EmaCon1)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EmaCon1)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contacto2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contacto2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contacto2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Contacto2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telcon2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telcon2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telcon2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Telcon2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Emacon2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Emacon2)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Emacon2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Emacon2)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TOUR_Catalogo_Tour.NomTour)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar atrás", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Regresar atrás", "Index")
+                </div>
+            }
         </div>
-    }
-</div>
+    </section>

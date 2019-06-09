@@ -4,144 +4,67 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Encabezado reserva transporte</h2>
+    <section class="content-header">
+        <h2>Encabezado reserva transporte</h2>
+    </section>
 
-<p>
-    @Html.ActionLink("Crear nuevo registro", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ReservaOpera)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomHuesped)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumRoom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Checkin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Checkout)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FecReg)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsrReg)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Alergias)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NotasCliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pax)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Aerolinea)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoVuelo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TRAN_Pick_Drop.DesPick)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TRAN_Pick_Drop1.DesPick)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TRAN_Tipo_Transporte.Destip)
-        </th>
-        <th></th>
-    </tr>
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Crear nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReservaOpera)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomHuesped)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumRoom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Checkout)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReservaOpera)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomHuesped)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumRoom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Checkin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Checkout)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FecReg)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsrReg)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Alergias)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observaciones)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NotasCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Aerolinea)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoVuelo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TRAN_Pick_Drop.DesPick)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TRAN_Pick_Drop1.DesPick)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TRAN_Tipo_Transporte.Destip)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CodReserva }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.CodReserva }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CodReserva })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReservaOpera)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomHuesped)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumRoom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Checkout)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+    </section>

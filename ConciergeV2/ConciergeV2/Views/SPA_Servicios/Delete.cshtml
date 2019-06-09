@@ -4,53 +4,58 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar</h2>
+    <section class="content-header">
+        <h2>Eliminar</h2>
+    </section>
 
-<h3>¿Está seguro de eliminar esto?</h3>
-<div>
-    <h4>Servicio spa</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomSer)
-        </dt>
+    <section class="content container-fluid">
+        <h3>¿Está seguro de eliminar esto?</h3>
+        <div>
+            <h4>Servicio spa</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomSer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NomSer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NomSer)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DesSer)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DesSer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DesSer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DesSer)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DurSer)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DurSer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DurSer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DurSer)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PreSer)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PreSer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PreSer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PreSer)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar atrás", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Regresar atrás", "Index")
+                </div>
+            }
         </div>
-    }
-</div>
+    </section>

@@ -4,9 +4,11 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Editar</h2>
+    <section class="content-header">
+        <h2>Editar</h2>
+    </section>
 
-
+<section class="content container-fluid">
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -64,3 +66,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+</section>
