@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ConciergeV2.Models.SPA_Terapeutas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="content-header">
+        <h2>Terapeutas spa</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Agregar nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomTerap)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomTerap)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodTerap }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodTerap })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>

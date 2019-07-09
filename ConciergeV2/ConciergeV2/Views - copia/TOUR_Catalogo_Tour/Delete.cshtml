@@ -1,0 +1,93 @@
+﻿@model ConciergeV2.Models.TOUR_Catalogo_Tour
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <section class="content-header">
+        <h2>Eliminar</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <h3>¿Está seguro de eliminar esto?</h3>
+        <div>
+            <h4>Catalogo tour</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomTour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NomTour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DesTour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DesTour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DurTour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DurTour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PreTourAdulto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PreTourAdulto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PreTourAdultoM)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PreTourAdultoM)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PreTourNino)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PreTourNino)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NotasTour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NotasTour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Operadores.NomCom)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Operadores.NomCom)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Regresar atrás", "Index")
+                </div>
+            }
+        </div>
+    </section>

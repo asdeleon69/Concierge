@@ -132,5 +132,58 @@ namespace ConciergeV2.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ObtenerReservaciones(string term)
+        {
+            try
+            {
+                var Registros = db.ReservacionesOperas.Where(c => c.NoReserva.Contains(term) || c.Huesped.Contains(term))
+                                    .Select(a => new
+                                    {
+                                        label = a.NoReserva,
+                                        id = a.Id,
+                                        huesped = a.Huesped,
+                                        checkin = a.Checkin.Value,
+                                        checkout = a.Checkout.Value,
+                                        room = a.Room,
+                                        email = a.email
+                                    }).Take(10).ToList()
+                                    .Select(x => new
+                                    {
+                                        label = x.label,
+                                        id = x.id,
+                                        huesped = x.huesped,
+                                        checkin = x.checkin.ToShortDateString(),
+                                        checkout = String.Format("{0:d}", x.checkout),
+                                        room = x.room,
+                                        email = x.email
+                                    }).AsQueryable();
+
+                return Json(Registros, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                return Json(new { label = "NO SE CARGÓ LA INFORMACIÓN", id = "-1" });
+            }
+        }
+
+        public ActionResult ObtenerCodCom(int CodTour)
+        {
+            try
+            {
+                return Json(db.TOUR_Catalogo_Tour.Where(c => c.CodTour == CodTour)
+                                    .Select(a => new
+                                    {
+                                        a.PreTourAdulto,
+                                        a.PreTourAdultoM,
+                                        a.PreTourNino,
+                                        descripcion = a.DesTour + ". " + a.NotasTour
+                                    }).SingleOrDefault(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                return Json(new { PreTourAdulto = 0, PreTourAdultoM = 0, PreTourNino = 0 });
+            }
+        }
     }
 }

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ConciergeV2.Models.TRAN_Encabezado_Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="content-header">
+        <h2>Encabezado reserva transporte</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Crear nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReservaOpera)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomHuesped)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumRoom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Checkout)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReservaOpera)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomHuesped)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumRoom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Checkout)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ConciergeV2.Models.SPA_Encabezado_Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="content-header">
+    <h2>Encabezado reserva spa</h2>
+</section>
+
+<section class="content container-fluid">
+    <p>
+        <i class="fas fa-file"></i>
+        @Html.ActionLink("Agregar nuevo registro", "Create")|
+        <i class="fas fa-info-circle"></i>
+        @Html.ActionLink("Agregar detalle", "Index", "SPA_Detalle_Reserva")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservaOpera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomHuesped)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecReg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrReg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotasCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservaOpera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomHuesped)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumRoom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FecReg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsrReg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alergias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotasCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <i class="fas fa-edit"></i>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
+                    <i class="fas fa-trash-alt"></i>
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
+                </td>
+            </tr>
+        }
+
+    </table>
+</section>

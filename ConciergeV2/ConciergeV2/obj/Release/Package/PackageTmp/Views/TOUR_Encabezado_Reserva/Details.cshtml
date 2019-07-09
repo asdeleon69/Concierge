@@ -1,0 +1,182 @@
+﻿@model ConciergeV2.Models.TOUR_Encabezado_Reserva
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <section class="content-header">
+        <h2>Detalle</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <div>
+            <h4>Encabezado reserva tour</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReservaOpera)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ReservaOpera)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomHuesped)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NomHuesped)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumRoom)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NumRoom)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Checkin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Checkin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Checkout)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Checkout)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FecReg)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FecReg)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UsrReg)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UsrReg)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Alergias)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Alergias)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NotasCliente)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NotasCliente)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxAdul)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaxAdul)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxAdulM)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaxAdulM)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaxNino)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaxNino)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Total)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Total)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hora)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReturnTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ReturnTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Catalogo_Tour.NomTour)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TOUR_Operadores.NomCom)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TOUR_Operadores.NomCom)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.CodReserva }) |
+            @Html.ActionLink("Regresar atrás", "Index")
+        </p>
+    </section>

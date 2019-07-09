@@ -1,0 +1,37 @@
+﻿@model ConciergeV2.Models.TRAN_Tipo_Transporte
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <section class="content-header">
+        <h2>Eliminar</h2>
+    </section>
+
+        <section class="content container-fluid">
+            <h3>¿Está seguro de eliminar esto?</h3>
+            <div>
+                <h4>Tipo transporte</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Destip)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Destip)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                        @Html.ActionLink("Regresar atrás", "Index")
+                    </div>
+                }
+            </div>
+        </section>

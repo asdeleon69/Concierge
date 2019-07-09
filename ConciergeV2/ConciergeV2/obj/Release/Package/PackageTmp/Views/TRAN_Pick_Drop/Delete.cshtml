@@ -1,0 +1,37 @@
+﻿@model ConciergeV2.Models.TRAN_Pick_Drop
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <section class="content-header">
+        <h2>Eliminar</h2>
+        </section>
+
+    <section class="content container-fluid">
+        <h3>¿Está seguro de eliminar esto?</h3>
+        <div>
+            <h4>Pick/Drop</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DesPick)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DesPick)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Regresar atrás", "Index")
+                </div>
+            }
+        </div>
+</section>

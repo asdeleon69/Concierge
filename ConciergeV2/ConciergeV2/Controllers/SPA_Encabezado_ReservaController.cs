@@ -17,8 +17,7 @@ namespace ConciergeV2.Controllers
         // GET: SPA_Encabezado_Reserva
         public ActionResult Index()
         {
-            var sPA_Encabezado_Reserva = db.SPA_Encabezado_Reserva.Include(s => s.SPA_Detalle_Reserva);
-            return View(sPA_Encabezado_Reserva.ToList());
+            return View(db.SPA_Encabezado_Reserva.ToList());
         }
 
         // GET: SPA_Encabezado_Reserva/Details/5
@@ -39,7 +38,6 @@ namespace ConciergeV2.Controllers
         // GET: SPA_Encabezado_Reserva/Create
         public ActionResult Create()
         {
-            ViewBag.CodReserva = new SelectList(db.SPA_Detalle_Reserva, "CodReserva", "CodSer");
             return View();
         }
 
@@ -57,7 +55,6 @@ namespace ConciergeV2.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CodReserva = new SelectList(db.SPA_Detalle_Reserva, "CodReserva", "CodSer", sPA_Encabezado_Reserva.CodReserva);
             return View(sPA_Encabezado_Reserva);
         }
 
@@ -73,7 +70,6 @@ namespace ConciergeV2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CodReserva = new SelectList(db.SPA_Detalle_Reserva, "CodReserva", "CodSer", sPA_Encabezado_Reserva.CodReserva);
             return View(sPA_Encabezado_Reserva);
         }
 
@@ -90,7 +86,6 @@ namespace ConciergeV2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CodReserva = new SelectList(db.SPA_Detalle_Reserva, "CodReserva", "CodSer", sPA_Encabezado_Reserva.CodReserva);
             return View(sPA_Encabezado_Reserva);
         }
 
@@ -114,6 +109,8 @@ namespace ConciergeV2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            db.SPA_Detalle_Reserva.RemoveRange(db.SPA_Detalle_Reserva.Where(a => a.CodReserva == id));
+            db.SaveChanges();
             SPA_Encabezado_Reserva sPA_Encabezado_Reserva = db.SPA_Encabezado_Reserva.Find(id);
             db.SPA_Encabezado_Reserva.Remove(sPA_Encabezado_Reserva);
             db.SaveChanges();
@@ -127,6 +124,97 @@ namespace ConciergeV2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //Listar servicios
+        public JsonResult GetServicios()
+        {
+            var Servicios = (from r in db.SPA_Servicios
+                       select new
+                       {
+                           r.CodSer,
+                           r.DesSer
+                       }).ToList();
+
+            return new JsonResult { Data = Servicios, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        //Listar terapeutas
+        public JsonResult GetTerapeutas()
+        {
+            var Terapeutas = (from r in db.SPA_Terapeutas
+                       select new
+                       {
+                           r.CodTerap,
+                           r.NomTerap
+                       }).ToList();
+
+            return new JsonResult { Data = Terapeutas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        //Listar Salas
+        public JsonResult GetSalas()
+        {
+            var Salas = (from r in db.SPA_Salas
+                       select new
+                       {
+                           r.CodSala,
+                           r.DesSala
+                       }).ToList();
+
+            return new JsonResult { Data = Salas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        //Obtener Precio Servicio
+        public ActionResult GetPrecioServicio(String Servicios)
+        {
+            try
+            {
+                return Json(db.SPA_Servicios.Where(c => c.CodSer == Servicios)
+                                    .Select(a => new
+                                    {
+                                        a.PreSer
+                                    }).SingleOrDefault(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                return Json(new { PreSer = 0 });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult GuardarReserva(SPA_Encabezado_Reserva Det)
+        {
+            bool status = true;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    //Guardando
+                    Det.UsrReg = "admin";//Session["Usr"].ToString();
+
+                    db.SPA_Encabezado_Reserva.Add(Det);
+                    db.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException e)
+                {
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        //Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        //    eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            //Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            //    ve.PropertyName, ve.ErrorMessage);
+                        }
+                    }
+                }
+                //catch (Exception)
+                //{
+                //    status = false;
+                //}
+            }
+            return new JsonResult { Data = new { status = status } }; 
         }
     }
 }

@@ -25,16 +25,18 @@ namespace ConciergeV2.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<SERV_Catalogo_otros_servicios> SERV_Catalogo_otros_servicios { get; set; }
         public virtual DbSet<SPA_Detalle_Reserva> SPA_Detalle_Reserva { get; set; }
         public virtual DbSet<SPA_Encabezado_Reserva> SPA_Encabezado_Reserva { get; set; }
         public virtual DbSet<SPA_Salas> SPA_Salas { get; set; }
         public virtual DbSet<SPA_Servicios> SPA_Servicios { get; set; }
         public virtual DbSet<SPA_Terapeutas> SPA_Terapeutas { get; set; }
-        public virtual DbSet<TOUR_Catalogo_Tour> TOUR_Catalogo_Tour { get; set; }
-        public virtual DbSet<TOUR_Operadores> TOUR_Operadores { get; set; }
+        public virtual DbSet<TRAN_Encabezado_Reserva> TRAN_Encabezado_Reserva { get; set; }
         public virtual DbSet<TRAN_Pick_Drop> TRAN_Pick_Drop { get; set; }
         public virtual DbSet<TRAN_Tipo_Transporte> TRAN_Tipo_Transporte { get; set; }
+        public virtual DbSet<TOUR_Catalogo_Tour> TOUR_Catalogo_Tour { get; set; }
         public virtual DbSet<TOUR_Encabezado_Reserva> TOUR_Encabezado_Reserva { get; set; }
-        public virtual DbSet<TRAN_Encabezado_Reserva> TRAN_Encabezado_Reserva { get; set; }
+        public virtual DbSet<TOUR_Operadores> TOUR_Operadores { get; set; }
+        public virtual DbSet<ReservacionesOpera> ReservacionesOperas { get; set; }
     }
 }

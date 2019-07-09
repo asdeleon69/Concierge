@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ConciergeV2.Models.TOUR_Operadores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="content-header">
+        <h2>Operador tour</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Crear nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomCom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TelCom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmaCom)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomCom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelCom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmaCom)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodCom }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodCom })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>

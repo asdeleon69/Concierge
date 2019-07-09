@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ConciergeV2.Models.TRAN_Pick_Drop>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="content-header">
+<h2>Pick/Drop</h2>
+</section>
+
+<section class="content container-fluid">
+<p>
+    <i class="fas fa-file"></i>
+    @Html.ActionLink("Crear nuevo registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DesPick)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesPick)
+        </td>
+        <td>
+            <i class="fas fa-edit"></i>
+            @Html.ActionLink("Editar", "Edit", new { id = item.CodPick }) |
+            <i class="fas fa-trash-alt"></i>
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.CodPick })
+        </td>
+    </tr>
+}
+
+</table>
+</section>

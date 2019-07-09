@@ -11,8 +11,7 @@ namespace ConciergeV2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TOUR_Operadores
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,37 +20,18 @@ namespace ConciergeV2.Models
             this.TOUR_Catalogo_Tour = new HashSet<TOUR_Catalogo_Tour>();
             this.TOUR_Encabezado_Reserva = new HashSet<TOUR_Encabezado_Reserva>();
         }
-
-        [Display(Name = "Código operador")]
-        [Required]
+    
         public int CodCom { get; set; }
-        [Display(Name = "Nombre operador")]
-        [Required]
         public string NomCom { get; set; }
-        [Display(Name = "Télefono")]
-        [Required]
-        [Phone]
         public string TelCom { get; set; }
-        [Display(Name = "Email")]
-        [EmailAddress]
         public string EmaCom { get; set; }
-        [Display(Name = "Contacto 1")]
         public string Contacto1 { get; set; }
-        [Display(Name = "Télefono 1")]
-        [Phone]
         public string Telcon1 { get; set; }
-        [Display(Name = "Email")]
-        [EmailAddress]
         public string EmaCon1 { get; set; }
-        [Display(Name = "Contacto 2")]
         public string Contacto2 { get; set; }
-        [Display(Name = "Télefono 2")]
-        [Phone]
         public string Telcon2 { get; set; }
-        [Display(Name = "Email")]
-        [EmailAddress]
         public string Emacon2 { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TOUR_Catalogo_Tour> TOUR_Catalogo_Tour { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

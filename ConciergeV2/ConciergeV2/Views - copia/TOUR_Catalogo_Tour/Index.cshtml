@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ConciergeV2.Models.TOUR_Catalogo_Tour>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="content-header">
+        <h2>Catalogo tour</h2>
+    </section>
+
+    <section class="content container-fluid">
+        <p>
+            <i class="fas fa-file"></i>
+            @Html.ActionLink("Agregar nuevo registro", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DesTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DurTour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PreTourAdulto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TOUR_Operadores.NomCom)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomTour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DesTour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DurTour)
+                    </td>
+                    <td>
+                        $ @Html.DisplayFor(modelItem => item.PreTourAdulto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TOUR_Operadores.NomCom)
+                    </td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.CodTour }) |
+                        <i class="fas fa-trash-alt"></i>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.CodTour })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>
