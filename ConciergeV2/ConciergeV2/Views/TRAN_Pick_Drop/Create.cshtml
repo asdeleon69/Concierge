@@ -4,40 +4,41 @@
     ViewBag.Title = "Create";
 }
 
-    <section class="content-header">
-        <h2>Crear</h2>
-    </section>
+<section class="content-header">
+    <h2>Crear</h2>
+</section>
 
-    <section class="content container-fluid">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+<section class="content container-fluid">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                <h4>Pick/Drop</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DesPick, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.DesPick, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DesPick, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Crear" class="btn btn-default" />
-                    </div>
+        <div class="form-horizontal">
+            <h4>Pick/Drop</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.LabelFor(model => model.DesPick, htmlAttributes: new { @class = "control-label" })
+                    <br />
+                    @Html.EditorFor(model => model.DesPick, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DesPick, "", new { @class = "text-danger" })
                 </div>
             </div>
-        }
 
-        <div>
-            @Html.ActionLink("Regresar atrás", "Index")
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </div>
         </div>
+    }
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+    <div>
+        @Html.ActionLink("Regresar atrás", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 </section>
