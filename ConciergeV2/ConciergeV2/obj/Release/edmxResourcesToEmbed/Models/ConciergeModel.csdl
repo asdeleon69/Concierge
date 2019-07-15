@@ -54,6 +54,7 @@
       <End Role="TOUR_Encabezado_Reserva" EntitySet="TOUR_Encabezado_Reserva" />
     </AssociationSet>
     <EntitySet Name="ReservacionesOperas" EntityType="ConciergeModel.ReservacionesOpera" />
+    <EntitySet Name="Users" EntityType="ConciergeModel.User" />
   </EntityContainer>
   <EntityType Name="SERV_Catalogo_otros_servicios">
     <Key>
@@ -364,5 +365,16 @@
     <Property Name="Checkout" Type="DateTime" Precision="3" />
     <Property Name="Room" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Nivel" Type="Int32" />
   </EntityType>
 </Schema>

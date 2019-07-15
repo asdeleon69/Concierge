@@ -10,6 +10,7 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
+    [Authorize]
     public class SPA_Encabezado_ReservaController : Controller
     {
         private ConciergeEntities1 db = new ConciergeEntities1();
@@ -21,6 +22,7 @@ namespace ConciergeV2.Controllers
         }
 
         // GET: SPA_Encabezado_Reserva/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -66,6 +68,11 @@ namespace ConciergeV2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SPA_Encabezado_Reserva sPA_Encabezado_Reserva = db.SPA_Encabezado_Reserva.Find(id);
+
+            ViewBag.CodSer = db.SPA_Servicios.ToList();
+            ViewBag.CodTerap = db.SPA_Terapeutas.ToList();
+            ViewBag.CodSala = db.SPA_Salas.ToList();
+
             if (sPA_Encabezado_Reserva == null)
             {
                 return HttpNotFound();
@@ -130,11 +137,11 @@ namespace ConciergeV2.Controllers
         public JsonResult GetServicios()
         {
             var Servicios = (from r in db.SPA_Servicios
-                       select new
-                       {
-                           r.CodSer,
-                           r.DesSer
-                       }).ToList();
+                             select new
+                             {
+                                 r.CodSer,
+                                 r.DesSer
+                             }).ToList();
 
             return new JsonResult { Data = Servicios, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -143,11 +150,11 @@ namespace ConciergeV2.Controllers
         public JsonResult GetTerapeutas()
         {
             var Terapeutas = (from r in db.SPA_Terapeutas
-                       select new
-                       {
-                           r.CodTerap,
-                           r.NomTerap
-                       }).ToList();
+                              select new
+                              {
+                                  r.CodTerap,
+                                  r.NomTerap
+                              }).ToList();
 
             return new JsonResult { Data = Terapeutas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -156,11 +163,11 @@ namespace ConciergeV2.Controllers
         public JsonResult GetSalas()
         {
             var Salas = (from r in db.SPA_Salas
-                       select new
-                       {
-                           r.CodSala,
-                           r.DesSala
-                       }).ToList();
+                         select new
+                         {
+                             r.CodSala,
+                             r.DesSala
+                         }).ToList();
 
             return new JsonResult { Data = Salas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -191,7 +198,7 @@ namespace ConciergeV2.Controllers
                 try
                 {
                     //Guardando
-                    Det.UsrReg = "admin";//Session["Usr"].ToString();
+                    Det.UsrReg = Session["UserName"].ToString();//Session["Usr"].ToString();
 
                     db.SPA_Encabezado_Reserva.Add(Det);
                     db.SaveChanges();
@@ -214,7 +221,61 @@ namespace ConciergeV2.Controllers
                 //    status = false;
                 //}
             }
-            return new JsonResult { Data = new { status = status } }; 
+            return new JsonResult { Data = new { status = status } };
+        }
+
+        [HttpPost]
+        public JsonResult ActualizarReserva(SPA_Encabezado_Reserva Det)
+        {
+            bool status = true;
+
+            try
+            {
+                var enDB = db.SPA_Detalle_Reserva.Where(x => x.CodReserva == Det.CodReserva);//Los que están en la BD para comparaciones
+                var EnForm = Det.SPA_Detalle_Reserva.Select(x => x.Numreg).ToArray();//Cargando el valor "CodReserva" de lo que se trae
+                var Nuevos = Det.SPA_Detalle_Reserva.Where(x => x.Numreg == 0).AsEnumerable();//Registros con valor "0"
+                var Eliminados = enDB.Where(x => !EnForm.Contains(x.Numreg));
+                var Aeditar = Det.SPA_Detalle_Reserva.Where(x => x.Numreg > 0);//Cuando trae valores
+
+                //Eliminando:
+                db.SPA_Detalle_Reserva.RemoveRange(Eliminados);
+                //Actualizando: Editando valores que vienen
+                Aeditar = Aeditar.Select(c => { c.CodReserva = Det.CodReserva; return c; }).AsEnumerable();//Agregando el CodReserva a los detalles
+                foreach (var Reg in Aeditar)
+                    db.Entry(Reg).State = System.Data.Entity.EntityState.Modified;
+                //Insertando
+                Nuevos = Nuevos.Select(c => { c.CodReserva = Det.CodReserva; return c; }).AsEnumerable();//Agregando el CodReserva a los detalles
+                db.SPA_Detalle_Reserva.AddRange(Nuevos);
+
+                db.SaveChanges();
+
+                //Actualizando el encabezado con una nueva instancia de la entidad
+                ConciergeEntities1 db_Aux = new ConciergeEntities1();
+                var Upd = db_Aux.SPA_Encabezado_Reserva.Find(Det.CodReserva);
+                if (Upd != null)
+                {
+                    //Actulizando datos
+                    Upd.ReservaOpera = Det.ReservaOpera;
+                    Upd.NomHuesped = Det.NomHuesped;
+                    Upd.NumRoom = Det.NumRoom;
+                    Upd.Checkin = Det.Checkin;
+                    Upd.Checkout = Det.Checkout;
+                    Upd.Alergias = Det.Alergias;
+                    Upd.Observaciones = Det.Observaciones;
+                    Upd.NotasCliente = Det.NotasCliente;
+                    Upd.Email = Det.Email;
+                    db_Aux.Entry(Upd).CurrentValues.SetValues(Upd);
+                    db_Aux.SaveChanges();
+                }
+
+                status = true;
+            }
+            catch (Exception rx)
+            {
+                status = false;
+            }
+
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }

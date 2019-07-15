@@ -38,5 +38,6 @@ namespace ConciergeV2.Models
         public virtual DbSet<TOUR_Encabezado_Reserva> TOUR_Encabezado_Reserva { get; set; }
         public virtual DbSet<TOUR_Operadores> TOUR_Operadores { get; set; }
         public virtual DbSet<ReservacionesOpera> ReservacionesOperas { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

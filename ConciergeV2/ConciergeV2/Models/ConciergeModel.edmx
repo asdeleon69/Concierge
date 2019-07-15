@@ -175,6 +175,17 @@
           <Property Name="Codtip" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Destip" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Nivel" Type="int" />
+        </EntityType>
         <Association Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
           <End Role="SPA_Encabezado_Reserva" Type="Self.SPA_Encabezado_Reserva" Multiplicity="1" />
           <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="*" />
@@ -309,6 +320,7 @@
           <EntitySet Name="TRAN_Encabezado_Reserva" EntityType="Self.TRAN_Encabezado_Reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRAN_Pick_Drop" EntityType="Self.TRAN_Pick_Drop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRAN_Tipo_Transporte" EntityType="Self.TRAN_Tipo_Transporte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva" Association="Self.FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
             <End Role="SPA_Encabezado_Reserva" EntitySet="SPA_Encabezado_Reserva" />
             <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />
@@ -408,6 +420,7 @@
             <End Role="TOUR_Encabezado_Reserva" EntitySet="TOUR_Encabezado_Reserva" />
           </AssociationSet>
           <EntitySet Name="ReservacionesOperas" EntityType="ConciergeModel.ReservacionesOpera" />
+          <EntitySet Name="Users" EntityType="ConciergeModel.User" />
         </EntityContainer>
         <EntityType Name="SERV_Catalogo_otros_servicios">
           <Key>
@@ -719,6 +732,17 @@
           <Property Name="Room" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Nivel" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -904,6 +928,18 @@
                 <ScalarProperty Name="Checkin" ColumnName="Checkin" />
                 <ScalarProperty Name="Huesped" ColumnName="Huesped" />
                 <ScalarProperty Name="NoReserva" ColumnName="NoReserva" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ConciergeModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

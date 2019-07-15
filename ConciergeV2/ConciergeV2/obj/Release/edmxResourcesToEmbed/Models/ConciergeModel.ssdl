@@ -170,6 +170,17 @@
     <Property Name="Codtip" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Destip" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Nivel" Type="int" />
+  </EntityType>
   <Association Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
     <End Role="SPA_Encabezado_Reserva" Type="Self.SPA_Encabezado_Reserva" Multiplicity="1" />
     <End Role="SPA_Detalle_Reserva" Type="Self.SPA_Detalle_Reserva" Multiplicity="*" />
@@ -304,6 +315,7 @@
     <EntitySet Name="TRAN_Encabezado_Reserva" EntityType="Self.TRAN_Encabezado_Reserva" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TRAN_Pick_Drop" EntityType="Self.TRAN_Pick_Drop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TRAN_Tipo_Transporte" EntityType="Self.TRAN_Tipo_Transporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva" Association="Self.FK_SPA_Detalle_Reserva_SPA_Encabezado_Reserva">
       <End Role="SPA_Encabezado_Reserva" EntitySet="SPA_Encabezado_Reserva" />
       <End Role="SPA_Detalle_Reserva" EntitySet="SPA_Detalle_Reserva" />

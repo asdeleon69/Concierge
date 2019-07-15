@@ -28,6 +28,7 @@
         <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Catalogo_Tour" />
         <AssociationConnector Association="ConciergeModel.FK_TOUR_Encabezado_Reserva_TOUR_Operadores" />
         <EntityTypeShape EntityType="ConciergeModel.ReservacionesOpera" Width="1.5" PointX="10.375" PointY="8.75" />
+        <EntityTypeShape EntityType="ConciergeModel.User" Width="1.5" PointX="12.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

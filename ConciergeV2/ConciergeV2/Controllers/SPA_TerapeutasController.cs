@@ -10,6 +10,7 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
+    [Authorize]
     public class SPA_TerapeutasController : Controller
     {
         private ConciergeEntities1 db = new ConciergeEntities1();

@@ -10,6 +10,7 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
+    [Authorize]
     public class TRAN_Encabezado_ReservaController : Controller
     {
         private ConciergeEntities1 db = new ConciergeEntities1();

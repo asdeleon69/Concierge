@@ -18,6 +18,7 @@ namespace ConciergeV2.Models
             public int Numreg { get; set; }
             [Display(Name = "Fecha/Hora registro")]
             [Required]
+            [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
             public Nullable<System.DateTime> FecHoraRes { get; set; }
             [Display(Name = "Servicio")]
             [Required]

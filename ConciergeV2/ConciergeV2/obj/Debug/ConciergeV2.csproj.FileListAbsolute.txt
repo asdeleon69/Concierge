@@ -174,7 +174,6 @@ C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\es\System.
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\es\System.Web.WebPages.resources.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Debug\ConciergeV2.csprojAssemblyReference.cache
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Debug\ConciergeV2.csproj.CoreCompileInputs.cache
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Debug\ConciergeV2.csproj.CopyComplete
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Debug\ConciergeV2.dll

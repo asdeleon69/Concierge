@@ -10,113 +10,107 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
-    [Authorize]
-    public class TOUR_Catalogo_TourController : Controller
+    public class UsersController : Controller
     {
         private ConciergeEntities1 db = new ConciergeEntities1();
 
-        // GET: TOUR_Catalogo_Tour
+        // GET: Users
         public ActionResult Index()
         {
-            var tOUR_Catalogo_Tour = db.TOUR_Catalogo_Tour.Include(t => t.TOUR_Operadores);
-            return View(tOUR_Catalogo_Tour.ToList());
+            return View(db.Users.ToList());
         }
 
-        // GET: TOUR_Catalogo_Tour/Details/5
+        // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TOUR_Catalogo_Tour tOUR_Catalogo_Tour = db.TOUR_Catalogo_Tour.Find(id);
-            if (tOUR_Catalogo_Tour == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(tOUR_Catalogo_Tour);
+            return View(user);
         }
 
-        // GET: TOUR_Catalogo_Tour/Create
+        // GET: Users/Create
         public ActionResult Create()
         {
-            ViewBag.ComTour = new SelectList(db.TOUR_Operadores, "CodCom", "NomCom");
             return View();
         }
 
-        // POST: TOUR_Catalogo_Tour/Create
+        // POST: Users/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CodTour,NomTour,DesTour,DurTour,PreTourAdulto,PreTourAdultoM,PreTourNino,NotasTour,ComTour")] TOUR_Catalogo_Tour tOUR_Catalogo_Tour)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Usuario,Password,Active")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.TOUR_Catalogo_Tour.Add(tOUR_Catalogo_Tour);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ComTour = new SelectList(db.TOUR_Operadores, "CodCom", "NomCom", tOUR_Catalogo_Tour.ComTour);
-            return View(tOUR_Catalogo_Tour);
+            return View(user);
         }
 
-        // GET: TOUR_Catalogo_Tour/Edit/5
+        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TOUR_Catalogo_Tour tOUR_Catalogo_Tour = db.TOUR_Catalogo_Tour.Find(id);
-            if (tOUR_Catalogo_Tour == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ComTour = new SelectList(db.TOUR_Operadores, "CodCom", "NomCom", tOUR_Catalogo_Tour.ComTour);
-            return View(tOUR_Catalogo_Tour);
+            return View(user);
         }
 
-        // POST: TOUR_Catalogo_Tour/Edit/5
+        // POST: Users/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CodTour,NomTour,DesTour,DurTour,PreTourAdulto,PreTourAdultoM,PreTourNino,NotasTour,ComTour")] TOUR_Catalogo_Tour tOUR_Catalogo_Tour)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Usuario,Password,Active")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tOUR_Catalogo_Tour).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ComTour = new SelectList(db.TOUR_Operadores, "CodCom", "NomCom", tOUR_Catalogo_Tour.ComTour);
-            return View(tOUR_Catalogo_Tour);
+            return View(user);
         }
 
-        // GET: TOUR_Catalogo_Tour/Delete/5
+        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TOUR_Catalogo_Tour tOUR_Catalogo_Tour = db.TOUR_Catalogo_Tour.Find(id);
-            if (tOUR_Catalogo_Tour == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(tOUR_Catalogo_Tour);
+            return View(user);
         }
 
-        // POST: TOUR_Catalogo_Tour/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TOUR_Catalogo_Tour tOUR_Catalogo_Tour = db.TOUR_Catalogo_Tour.Find(id);
-            db.TOUR_Catalogo_Tour.Remove(tOUR_Catalogo_Tour);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

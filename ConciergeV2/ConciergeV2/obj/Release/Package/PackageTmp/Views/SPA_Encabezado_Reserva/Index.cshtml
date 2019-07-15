@@ -11,9 +11,9 @@
 <section class="content container-fluid">
     <p>
         <i class="fas fa-file"></i>
-        @Html.ActionLink("Agregar nuevo registro", "Create")|
+        @Html.ActionLink("Agregar nuevo registro", "Create")@*|
         <i class="fas fa-info-circle"></i>
-        @Html.ActionLink("Agregar detalle", "Index", "SPA_Detalle_Reserva")
+        @Html.ActionLink("Agregar detalle", "Index", "SPA_Detalle_Reserva")*@
     </p>
     <table class="table">
         <tr>
@@ -78,8 +78,8 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @*<i class="fas fa-edit"></i>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |*@
+                    <i class="fas fa-edit"></i>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.CodReserva }) |
                     <i class="fas fa-trash-alt"></i>
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.CodReserva })
                 </td>

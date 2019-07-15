@@ -138,14 +138,22 @@
                                 <!-- The user image in the navbar-->
                                 <img src="~/dist/img/avatar.png" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">UserName</span>
+                                <span class="hidden-xs">
+                                    @if (Session["UserName"] != null)
+                                    {
+                                        @Session["UserName"].ToString()
+                                    }
+                                                            </span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <img src="~/dist/img/avatar.png" class="img-circle" alt="User Image">
                                     <p>
-                                        UserName
+                                        @if (Session["UserName"] != null)
+                                        {
+                                        @Session["UserName"].ToString()
+                                        }
                                         <small></small>
 
                                     </p>
@@ -164,9 +172,12 @@
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/Home/SingOut" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
+                                    }
                                 </li>
                             </ul>
                         </li>
@@ -179,32 +190,41 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="~/dist/img/avatar.png" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>UserName</p>
-                        <!-- Status -->
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
-                <!-- search form (Optional) -->
-                @*<form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                @if (Session["UserName"] != null)
+                {
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="~/dist/img/avatar.png" class="img-circle" alt="User Image">
                         </div>
-                    </form>*@
-                <!-- /.search form -->
-                <!-- Sidebar Menu -->
-                @Html.Partial("_MainMenu")
-                <!-- /.sidebar-menu -->
-            </section>
+                        <div class="pull-left info">
+                                <p>
+                                    @Session["UserName"].ToString()
+                                </p>
+                                <!-- Status -->
+                                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            
+                        </div>
+                    </div>
+                    }
+                    <!-- search form (Optional) -->
+                    @*<form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>*@
+                    <!-- /.search form -->
+                    <!-- Sidebar Menu -->
+                    @if (Session["UserName"] != null)
+                    {
+                        @Html.Partial("_MainMenu")
+                    }
+                    <!-- /.sidebar-menu -->
+                </section>
             <!-- /.sidebar -->
         </aside>
         <!-- Content Wrapper. Contains page content -->

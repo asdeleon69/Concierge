@@ -183,6 +183,8 @@ $(document).ready(function () {
     $('#submit').click(function () {
         var isAllValid = true;
 
+        var _Crear = $('#CodReserva').val() === undefined || $('#CodReserva').val() === null || parseInt($('#CodReserva').val()) < 0 ? true : false;
+
         //validate order items
         $('#SpanItemError').text('');
         var list = [];//Arreglo para obtener los detalles
@@ -199,6 +201,7 @@ $(document).ready(function () {
                 $(this).addClass('error');
             } else {
                 var DetReserva = {
+                    Numreg: $('.Numreg', this).val(),
                     FecHoraRes: $('.fh', this).val(),
                     CodSer: $('select.servicios', this).val().trim(),
                     CodSala: $('select.salas', this).val().trim(),
@@ -239,16 +242,17 @@ $(document).ready(function () {
         if (isAllValid) {
             var data =
             {
-                ReservaOpera: $('#ReservaOpera').val().trim(),
-                NomHuesped: $('#NomHuesped').val().trim(),
-                NumRoom: $('#NumRoom').val().trim(),
-                Checkin: $('#Checkin').val().trim(),
-                Checkout: $('#Checkout').val().trim(),
-                FecReg: $('#FecReg').val().trim(),
-                Alergias: $('#Alergias').val().trim(),
-                Observaciones: $('#Observaciones').val().trim(),
-                NotasCliente: $('#NotasCliente').val().trim(),
-                Email: $('#Email').val().trim(),
+                CodReserva: $('#CodReserva').val(),
+                ReservaOpera: $('#ReservaOpera').val(),
+                NomHuesped: $('#NomHuesped').val(),
+                NumRoom: $('#NumRoom').val(),
+                Checkin: $('#Checkin').val(),
+                Checkout: $('#Checkout').val(),
+                FecReg: $('#FecReg').val(),
+                Alergias: $('#Alergias').val(),
+                Observaciones: $('#Observaciones').val(),
+                NotasCliente: $('#NotasCliente').val(),
+                Email: $('#Email').val(),
                 SPA_Detalle_Reserva: list
             }
 
@@ -256,7 +260,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: 'POST',
-                url: '/SPA_Encabezado_Reserva/GuardarReserva',
+                url: _Crear === true ? '/SPA_Encabezado_Reserva/GuardarReserva' : '/SPA_Encabezado_Reserva/ActualizarReserva',
                 data: JSON.stringify(data),
                 contentType: 'application/json',
                 success: function (data) {
@@ -271,7 +275,7 @@ $(document).ready(function () {
                         alert('Error');
                     }
                     $('#submit').text('Save');
-                    window.location.replace("/SPA_Encabezado_Reserva/Create");
+                    window.location.replace("/SPA_Encabezado_Reserva/Index");
                 },
                 error: function (error) {
                     console.log(error);

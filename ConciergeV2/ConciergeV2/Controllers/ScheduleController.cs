@@ -10,6 +10,7 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
+    [Authorize]
     public class ScheduleController : Controller
     {
         private Models.ConciergeEntities1 db = new Models.ConciergeEntities1();

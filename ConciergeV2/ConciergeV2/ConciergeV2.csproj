@@ -144,6 +144,8 @@
     <Compile Include="Controllers\TRAN_Encabezado_ReservaController.cs" />
     <Compile Include="Controllers\TRAN_Pick_DropController.cs" />
     <Compile Include="Controllers\TRAN_Tipo_TransporteController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Filters\VerificaSession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +203,9 @@
     <Compile Include="Models\TRAN_Tipo_Transporte.cs">
       <DependentUpon>ConciergeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>ConciergeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Validations\SPA_Detalle_Reserva_Metadata.cs" />
     <Compile Include="Models\Validations\SPA_Encabezado_Reserva_Metadata.cs" />
     <Compile Include="Models\Validations\SPA_Salas_Metadata.cs" />
@@ -212,6 +217,7 @@
     <Compile Include="Models\Validations\TRAN_Encabezado_Reserva_Metadata.cs" />
     <Compile Include="Models\Validations\TRAN_Pick_Drop_Metadata.cs" />
     <Compile Include="Models\Validations\TRAN_Tipo_Transporte_Metadata.cs" />
+    <Compile Include="Models\Validations\User_Metadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -7031,6 +7037,7 @@
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\LoginCallAction.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -8941,9 +8948,11 @@
     <Content Include="Views\SPA_Encabezado_Reserva\Edit.cshtml" />
     <Content Include="Views\TRAN_Encabezado_Reserva\Create.cshtml" />
     <Content Include="Views\TRAN_Encabezado_Reserva\Edit.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
