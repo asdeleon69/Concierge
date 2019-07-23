@@ -9,6 +9,8 @@
             </span>
         </a>
         <ul class="treeview-menu">
+            @if (Convert.ToInt16(Session["Nivel"].ToString()) == 2)
+            {<li>@Html.ActionLink("Usuarios", "Index", "Users")</li>}
             <li>@Html.ActionLink("Salas Spa", "Index", "SPA_Salas")</li>
             <li>@Html.ActionLink("Servicios Spa", "Index", "SPA_Servicios")</li>
             <li>@Html.ActionLink("Pick Drop", "Index", "Tran_Pick_Drop")</li>

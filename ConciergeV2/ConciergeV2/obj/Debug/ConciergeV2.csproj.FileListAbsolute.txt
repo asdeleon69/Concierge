@@ -140,6 +140,7 @@ C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\roslyn\vbc
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\roslyn\VBCSCompiler.exe
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\Antlr3.Runtime.dll
+C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\DataAnnotationsExtensions.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\EntityFramework.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\EntityFramework.SqlServer.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\FullCalendar.MVC5.dll

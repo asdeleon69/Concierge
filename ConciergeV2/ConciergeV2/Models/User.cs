@@ -18,6 +18,7 @@ namespace ConciergeV2.Models
         public string Nombre { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
+        //public string PasswordConfirm { get; set; }
         public Nullable<bool> Activo { get; set; }
         public Nullable<int> Nivel { get; set; }
     }

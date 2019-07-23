@@ -10,6 +10,7 @@ using ConciergeV2.Models;
 
 namespace ConciergeV2.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private ConciergeEntities1 db = new ConciergeEntities1();
@@ -46,15 +47,22 @@ namespace ConciergeV2.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Usuario,Password,Active")] User user)
+        public ActionResult Create(User user, String PasswordConfirm)
         {
+            if (db.Users.Any(a => a.Usuario == user.Usuario))
+            {
+                ModelState.AddModelError("Usuario", "Este usuario ya existe.");
+            }
+            if (user.Password != PasswordConfirm)
+            {
+                ModelState.AddModelError("ConfirmPassword", "El password no coincide.");
+            }
             if (ModelState.IsValid)
             {
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(user);
         }
 
@@ -78,15 +86,35 @@ namespace ConciergeV2.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Usuario,Password,Active")] User user)
+        public ActionResult Edit(User user)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(user).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            //return View(user);
+
+            if (user != null)
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                
+                ConciergeEntities1 db_Aux = new ConciergeEntities1();
+                var Upd = db_Aux.Users.Find(user.Id);
+                if (Upd != null)
+                {
+                    //Actulizando datos
+                    Upd.Nombre = user.Nombre;
+                    Upd.Nivel = user.Nivel;
+                    Upd.Activo = user.Activo;
+                    db_Aux.Entry(Upd).CurrentValues.SetValues(Upd);
+                    db_Aux.SaveChanges();
+                }
                 return RedirectToAction("Index");
+                
             }
             return View(user);
+
         }
 
         // GET: Users/Delete/5
@@ -122,6 +150,57 @@ namespace ConciergeV2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        // GET: Users/Edit/5
+        public ActionResult EditPassword(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        // POST: Users/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPassword(User user, String PasswordConfirm)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(user).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            if (user != null)
+            {
+            if (user.Password == PasswordConfirm)
+            {
+                ConciergeEntities1 db_Aux = new ConciergeEntities1();
+                var Upd = db_Aux.Users.Find(user.Id);
+                if (Upd != null)
+                {
+                    //Actulizando datos
+                    Upd.Password = user.Password;
+                    db_Aux.Entry(Upd).CurrentValues.SetValues(Upd);
+                    db_Aux.SaveChanges();
+                }
+                return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("ConfirmPassword", "El password no coincide.");
+                }
+            }
+            return View(user);
         }
     }
 }

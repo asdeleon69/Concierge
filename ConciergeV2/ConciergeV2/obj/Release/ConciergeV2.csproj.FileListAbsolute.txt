@@ -90,3 +90,4 @@ C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Release\Co
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Release\ConciergeV2.csproj.CopyComplete
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Release\ConciergeV2.dll
 C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\obj\Release\ConciergeV2.pdb
+C:\Users\asdel\Documents\GitHub\Concierge\ConciergeV2\ConciergeV2\bin\DataAnnotationsExtensions.dll
